@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from signup.views import signaction
-from login.views import loginaction
+from donor.views import loginaction
 from signup.views import homeaction
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,5 +25,5 @@ urlpatterns = [
     path('',homeaction),
     path('admin/', admin.site.urls),
     path('signup/',signaction),
-    path('login/',loginaction),
+    path('donor/',loginaction),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
