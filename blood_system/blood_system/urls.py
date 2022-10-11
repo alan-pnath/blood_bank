@@ -15,15 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from signup.views import signaction
-from donor.views import loginaction
-from signup.views import homeaction
 from django.conf import settings
+from donor import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('',homeaction),
+    path('', views.homeaction,name="home"),
     path('admin/', admin.site.urls),
-    path('signup/',signaction),
-    path('donor/',loginaction),
+    path('loginaction/', views.loginaction,name="login"),
+    path('signupaction/', views.signaction,name="signup"),
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
