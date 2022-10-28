@@ -10,7 +10,7 @@ def loginaction(request):
         cursor = m.cursor()
         d = request.POST
         for key, value in d.items():
-            if key == "name":
+            if key == "email":
                 un = value
             if key == "pass":
                 ps = value
@@ -35,11 +35,11 @@ def signaction(request):
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():
-            if key=="username":
+            if key=="email":
                 un=value
-            if key=="psw":
+            if key=="phone":
                 ps=value
-        c="insert into users Values('{}','{}')".format(un,ps)
+        c="insert into users(username,password)Values('{}','{}')".format(un,ps)
         cursor.execute(c)
         m.commit()
     return render(request,'signup_page.html')

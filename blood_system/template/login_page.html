@@ -32,7 +32,7 @@
 					<img src="{% static 'dassets/images/B-1.jpg'%}" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" action="#" method="post">
+				<form class="login100-form validate-form" action="#" method="post">{% csrf_token %}
 					<span class="login100-form-title">
 						B-ORG LOGIN
 					</span>
@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="/donor">
+						<a class="txt2" href="{% url 'signup'%}">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
