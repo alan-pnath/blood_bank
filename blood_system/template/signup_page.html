@@ -1,234 +1,101 @@
 {% load static%}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
+  <head>
+  	<title>sign up </title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
 
-    <!-- Title Page-->
-    <title>Register</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
-    <!-- Icons font CSS-->
-    <link href="{% static 'regassets/vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
-    <link href="{% static 'regassets/vendor/font-awesome-4.7/css/font-awesome.min.css'%}" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Vendor CSS-->
-    <link href="{% static 'regassets/vendor/select2/select2.min.css'%}" rel="stylesheet" media="all">
-    <link href="{% static 'regassets/vendor/datepicker/daterangepicker.css'%}" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
 
-    <!-- Main CSS-->
-    <link href="{% static 'regassets/css/main.css'%}" rel="stylesheet" media="all">
-</head>
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
 
-<body>
-{% csrf_token %}
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title"> Donor Registration Form</h2>
-                    <form method="POST">{% csrf_token %}
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">First name</label>
-                                    <input class="input--style-4" type="text" name="first_name">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
-                                </div>
-                            </div>
-                            <table><tr><div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Age</label>
-                                    <input class="input--style-4" type="text" name="age">
-                                </div>
-                            </div>
-                                </tr>
-                        <tr>
-                        <div class="col-2">
-                        <div class="input-group">
-                            <label class="label">Blood Type</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        </div>
-                            </tr></table>
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="wrap d-md-flex">
+						<div class="text-wrap p-4 p-lg-5 d-flex img d-flex align-items-end" style="background-image: url({% static 'images/bg1.jpg'%});">
 
+			      </div>
+						<div class="login-wrap p-4 p-md-5">
+	      			<h3 class="mb-3">Sign Up</h3>
+							<form action="#" class="signup-form">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group d-flex align-items-center">
+					      			<label class="label" for="name">Full Name</label>
+					      			<input type="text" class="form-control" placeholder="Full Name">
+					      		</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group d-flex align-items-center">
+					      			<label class="label" for="email">Email Address</label>
+					      			<input type="text" class="form-control" placeholder="johndoe@email.com">
+					      		</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group d-flex align-items-center">
+					      			<label class="label" for="phone">Phone no.</label>
+					      			<input type="text" class="form-control" placeholder="+91">
+					      		</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group d-flex align-items-center">
+				            	<label class="label" for="password">Password</label>
+				              <input type="password" class="form-control" placeholder="Password">
+				            </div>
+									</div>
 
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Birthday</label>
-                                    <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+									<div class="col-md-12 my-4">
+										<div class="form-group">
+				            	<div class="w-100">
+					            	<label class="checkbox-wrap checkbox-primary">I agree all statements in terms of service
+												  <input type="checkbox" checked>
+												  <span class="checkmark"></span>
+												</label>
+											</div>
+				            </div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+				            	<button type="submit" class="btn btn-secondary submit p-3">Create an account</button>
+				            </div>
+									</div>
+								</div>
 
-                        <div class="input-group">
-                                    <label class="label">Address</label>
-                                    <input class="input--style-4" type="address" name="address">
-                                </div>
-                        <div class="input-group">
-                            <label class="label">State</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                        <select>
-	<option value="AP">Andhra Pradesh</option>
-	<option value="AR">Arunachal Pradesh</option>
-	<option value="AS">Assam</option>
-	<option value="BR">Bihar</option>
-	<option value="CT">Chhattisgarh</option>
-	<option value="GA">Gujarat</option>
-	<option value="HR">Haryana</option>
-	<option value="HP">Himachal Pradesh</option>
-	<option value="JK">Jammu and Kashmir</option>
-	<option value="GA">Goa</option>
-	<option value="JH">Jharkhand</option>
-	<option value="KA">Karnataka</option>
-	<option value="KL">Kerala</option>
-	<option value="MP">Madhya Pradesh</option>
-	<option value="MH">Maharashtra</option>
-    <option value="MN">Manipur</option>
-    <option value="ML">Meghalaya</option>
-	<option value="MZ">Mizoram</option>
-	<option value="NL">Nagaland</option>
-	<option value="OR">Odisha</option>
-	<option value="PB">Punjab</option>
-	<option value="RJ">Rajasthan</option>
-	<option value="SK">Sikkim</option>
-	<option value="TN">Tamil Nadu</option>
-	<option value="TG">Telangana</option>
-	<option value="TR">Tripura</option>
-	<option value="UT">Uttarakhand</option>
-	<option value="UP">Uttar Pradesh</option>
-	<option value="WB">West Bengal</option>
-	<option value="AN">Andaman and Nicobar Islands</option>
-	<option value="CH">Chandigarh</option>
-	<option value="DN">Dadra and Nagar Haveli</option>
-	<option value="DD">Daman and Diu</option>
-	<option value="DL">Delhi</option>
-	<option value="LD">Lakshadweep</option>
-	<option value="PY">Puducherry</option>
-</select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
-                                </div>
-                            </div>
-                        </div>
-                         <div class="input-group">
-                                    <label class="label">Are You Diabetic ?</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="yes">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">No
-                                            <input type="radio" name="yes">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                        <div class="input-group">
-                                    <label class="label">Are You HIV Positive?</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="No">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">No
-                                            <input type="radio" name="No">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            <div class="input-group">
-                                    <label class="label">Are You Using Any Medicine?<h6>(If 'yes' please enter the medicine name and it's use or  used for)+</h6></label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="med">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">No
-                                            <input type="radio" name="med">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <input class="input--style-4" type="text" name="des">
-                                    </div>
-                                </div>
+		          </form>
+		          <div class="social-wrap">
+		          	<p class="or">
+		          		<span>or</span>
+		          	</p>
+		      			<p class="mb-3 text-center">Signup with this services</p>
+		      			<p class="social-media d-flex justify-content-center">
+		      				<a href="#" class="social-icon google d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a>
+									<a href="#" class="social-icon facebook d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+									<a href="#" class="social-icon twitter d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+								</p>
+	          	</div>
+		          <div class="w-100 text-center">
+								<p class="mt-4">I'm already a member! <a href="login-form-02/index.html">Login In</a></p>
+		          </div>
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
 
+	<script src="{% static 'js/jquery.min.js'%}"></script>
+  <script src="{% static 'js/popper.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/main.js'%}"></script>
 
-                        <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Jquery JS-->
-    <script src="{% static 'regassets/vendor/jquery/jquery.min.js'%}"></script>
-    <!-- Vendor JS-->
-    <script src="{% static 'regassets/vendor/select2/select2.min.js'%}"></script>
-    <script src="{% static 'regassets/vendor/datepicker/moment.min.js'%}"></script>
-    <script src="{% static 'regassets/vendor/datepicker/daterangepicker.js'%}"></script>
-
-    <!-- Main JS-->
-    <script src="{% static 'regassets/js/global.js'%}"></script>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
+	</body>
 </html>
 <!-- end document-->
