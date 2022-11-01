@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from donor import views
+from organ.views import *
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -25,5 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('loginaction/', views.loginaction,name="login"),
     path('signupaction/', views.signaction,name="signup"),
+    path('organsignup/',organsignup,name="organ_signup"),
+    path('organlogin/',organlogin,name="organ_login"),
+
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
