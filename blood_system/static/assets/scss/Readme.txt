@@ -1,1 +1,1 @@
-The .scss (Sass) files are only avilable in the pro version. You can buy it from: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+The .scss (Sass) files are only avilable in the pro version. You can buy it from: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/

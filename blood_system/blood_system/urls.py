@@ -20,7 +20,8 @@ from donor import views
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.homeaction,name="home"),
+    path('',views.medicio,name="medicio"),
+    path('bloodhome/', views.bloodhome,name="blood_home"),
     path('admin/', admin.site.urls),
     path('loginaction/', views.loginaction,name="login"),
     path('signupaction/', views.signaction,name="signup"),

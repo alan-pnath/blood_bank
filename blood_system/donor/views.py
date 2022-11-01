@@ -3,6 +3,11 @@ import mysql.connector as sql
 un=''
 ps=''
 # Create your views here.
+def medicio(request):
+    return render(request, 'home_page.html')
+
+
+
 def loginaction(request):
     global un, ps
     if request.method == "POST":
@@ -23,8 +28,8 @@ def loginaction(request):
             return render(request, 'blood_login.html')
     return render(request, 'login_page.html')
 
-def homeaction(request):
-    return render(request,'home_page.html')
+def bloodhome(request):
+    return render(request,'blood_home.html')
 
 
 def signaction(request):
