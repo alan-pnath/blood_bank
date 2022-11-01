@@ -33,18 +33,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title"> Donor Registration Form</h2>
-                    <form method="POST">
+                    <form method="POST">{% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">First name</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="first">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="last">
                                 </div>
                             </div>
                             <table><tr><div class="col-2">
@@ -59,16 +59,16 @@
                         <div class="input-group">
                             <label class="label">Blood Type</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
+                                <select name="type">
                                     <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -82,7 +82,7 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="dob">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -92,11 +92,11 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" value="Male" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender">
+                                            <input type="radio" value="Female" name="gender">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -105,54 +105,62 @@
                         </div>
 
                         <div class="input-group">
-                                    <label class="label">Address</label>
-                                    <input class="input--style-4" type="address" name="address">
+                                    <label class="label">Address line 1</label>
+                                    <input class="input--style-4" type="address1" name="add1">
+                                </div>
+                             <div class="input-group">
+                                    <label class="label">Address line 2</label>
+                                    <input class="input--style-4" type="address2" name="add2">
+                                </div>
+                                 <div class="input-group">
+                                    <label class="label">Pincode</label>
+                                    <input class="input--style-4" type="pin" name="pin">
                                 </div>
                         <div class="input-group">
                             <label class="label">State</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                        <select>
-	<option value="AP">Andhra Pradesh</option>
-	<option value="AR">Arunachal Pradesh</option>
-	<option value="AS">Assam</option>
-	<option value="BR">Bihar</option>
-	<option value="CT">Chhattisgarh</option>
-	<option value="GA">Gujarat</option>
-	<option value="HR">Haryana</option>
-	<option value="HP">Himachal Pradesh</option>
-	<option value="JK">Jammu and Kashmir</option>
-	<option value="GA">Goa</option>
-	<option value="JH">Jharkhand</option>
-	<option value="KA">Karnataka</option>
-	<option value="KL">Kerala</option>
-	<option value="MP">Madhya Pradesh</option>
-	<option value="MH">Maharashtra</option>
-    <option value="MN">Manipur</option>
-    <option value="ML">Meghalaya</option>
-	<option value="MZ">Mizoram</option>
-	<option value="NL">Nagaland</option>
-	<option value="OR">Odisha</option>
-	<option value="PB">Punjab</option>
-	<option value="RJ">Rajasthan</option>
-	<option value="SK">Sikkim</option>
-	<option value="TN">Tamil Nadu</option>
-	<option value="TG">Telangana</option>
-	<option value="TR">Tripura</option>
-	<option value="UT">Uttarakhand</option>
-	<option value="UP">Uttar Pradesh</option>
-	<option value="WB">West Bengal</option>
-	<option value="AN">Andaman and Nicobar Islands</option>
-	<option value="CH">Chandigarh</option>
-	<option value="DN">Dadra and Nagar Haveli</option>
-	<option value="DD">Daman and Diu</option>
-	<option value="DL">Delhi</option>
-	<option value="LD">Lakshadweep</option>
-	<option value="PY">Puducherry</option>
+                        <select name="state">
+	<option value="Andra Pradesh">Andhra Pradesh</option>
+	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+	<option value="Assam">Assam</option>
+	<option value="Bihar">Bihar</option>
+	<option value="Chhattisgarh">Chhattisgarh</option>
+	<option value="Gujarat">Gujarat</option>
+	<option value="Haryana">Haryana</option>
+	<option value="Himachal Pradesh">Himachal Pradesh</option>
+	<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+	<option value="Goa">Goa</option>
+	<option value="Jharkhand">Jharkhand</option>
+	<option value="Karnataka">Karnataka</option>
+	<option value="Kerala">Kerala</option>
+	<option value="Madhya Pradesh">Madhya Pradesh</option>
+	<option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+	<option value="Mizoram">Mizoram</option>
+	<option value="Nagaland">Nagaland</option>
+	<option value="Odisha">Odisha</option>
+	<option value="Punjab">Punjab</option>
+	<option value="Rajasthan">Rajasthan</option>
+	<option value="Sikkim">Sikkim</option>
+	<option value="Tamil Nadu">Tamil Nadu</option>
+	<option value="Telangana">Telangana</option>
+	<option value="Tripura">Tripura</option>
+	<option value="Uttarakhand">Uttarakhand</option>
+	<option value="Uttar Pradesh">Uttar Pradesh</option>
+	<option value="West Bengal">West Bengal</option>
+	<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+	<option value="Chandigarh">Chandigarh</option>
+	<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+	<option value="Daman and Diu">Daman and Diu</option>
+	<option value="Delhi">Delhi</option>
+	<option value="Lakshadweep">Lakshadweep</option>
+	<option value="Puducherry">Puducherry</option>
 </select>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-                        <div class="row row-space">
+                        <!--<div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
@@ -165,54 +173,101 @@
                                     <input class="input--style-4" type="text" name="phone">
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
+                            <div class="input-group">
+                            <label class="label">Please enter your weight<h6></h6></label>
+                             <input class="input--style-4" type="text" name="weight">
+                            </div>
                          <div class="input-group">
                                     <label class="label">Are You Diabetic ?</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="yes">
+                                            <input type="radio" checked="checked"value="Yes" name="diab">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">No
-                                            <input type="radio" name="yes">
+                                            <input type="radio" value="No" name="diab" >
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
+
                         <div class="input-group">
                                     <label class="label">Are You HIV Positive?</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="No">
+                                            <input type="radio" value="Yes" checked="checked" name="hiv">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">No
-                                            <input type="radio" name="No">
+                                            <input type="radio" value="No" name="hiv">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
                                 </div>
                             <div class="input-group">
-                                    <label class="label">Are You Using Any Medicine?<h6>(If 'yes' please enter the medicine name and it's use or  used for)+</h6></label>
+                                    <label class="label">Are You Using Any Medicine?<h6>(If 'yes' please enter the medicine name and it's use or  used for)</h6></label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Yes
-                                            <input type="radio" checked="checked" name="med">
+                                            <input type="radio" value="Yes" checked="checked" name="medicine">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">No
-                                            <input type="radio" name="med">
+                                            <input type="radio"  value="No" name="medicine">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <input class="input--style-4" type="text" name="des">
+                                        <input class="input--style-4" type="text" name="medname">
                                     </div>
                                 </div>
-
+                             <div class="input-group">
+                                    <label class="label">Do you suffer from or have suffered from any diseases ?<h6>(If 'yes' please enter the disease(s) name and details)</h6></label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="radio" checked="checked" value="Yes" name="disease">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                            <input type="radio"  value="No" name="disease">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <input class="input--style-4" type="text" name="Dname">
+                                    </div>
+                                </div>
+                            <div class="input-group">
+                                    <label class="label">Is there any history of surgery?<h6>(If 'yes' please enter the details)</h6></label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="radio" checked="checked" value="Yes" name="surg">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                            <input type="radio" value="No" name="surg">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <input class="input--style-4" type="text" name="surgname">
+                                    </div>
+                                </div>
+                            <div class="input-group">
+                                    <label class="label">Have you donated blood previously?<h6>(If 'yes' please enter the  last date and place you donate your boold)</h6></label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="radio" checked="checked"  value="Yes" name="donateprev">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                            <input type="radio" value="No" name="donateprev">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <input class="input--style-4" type="text" name="dondate">
+                                    </div>
+                                </div>
 
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
+
                     </form>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -230,4 +285,4 @@
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
-<!-- end document-->
+<!-- end document--><!-- end document-->

@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'blood_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blood',
+        'NAME': 'medicio',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
