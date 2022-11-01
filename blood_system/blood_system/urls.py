@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('loginaction/', views.loginaction,name="login"),
     path('signupaction/', views.signaction,name="signup"),
+    path('donorreg/', views.donorreg,name="donate"),
     path('organsignup/',organsignup,name="organ_signup"),
     path('organlogin/',organlogin,name="organ_login"),
 

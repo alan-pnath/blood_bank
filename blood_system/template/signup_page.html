@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+	<link rel="stylesheet" href="{% static 'bloodreg/css/style.css'%}">
 
 	</head>
 	<body>
@@ -20,7 +20,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-10">
 					<div class="wrap d-md-flex">
-						<div class="text-wrap p-4 p-lg-5 d-flex img d-flex align-items-end" style="background-image: url({% static 'images/bg1.jpg'%});">
+						<div class="text-wrap p-4 p-lg-5 d-flex img d-flex align-items-end" style="background-image: url({% static 'bloodreg/images/bg1.jpg'%});">
 
 			      </div>
 						<div class="login-wrap p-4 p-md-5">
@@ -82,7 +82,7 @@
 								</p>
 	          	</div>
 		          <div class="w-100 text-center">
-								<p class="mt-4">I'm already a member! <a href="login-form-02/index.html">Login In</a></p>
+								<p class="mt-4">I'm already a member! <a href="{% url 'login' %}">Login In</a></p>
 		          </div>
 		        </div>
 		      </div>
@@ -91,10 +91,10 @@
 		</div>
 	</section>
 
-	<script src="{% static 'js/jquery.min.js'%}"></script>
-  <script src="{% static 'js/popper.js'%}"></script>
-  <script src="{% static 'js/bootstrap.min.js'%}"></script>
-  <script src="{% static 'js/main.js'%}"></script>
+	<script src="{% static 'bloodreg/js/jquery.min.js'%}"></script>
+  <script src="{% static 'bloodreg/js/popper.js'%}"></script>
+  <script src="{% static 'bloodreg/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'bloodreg/js/main.js'%}"></script>
 
 	</body>
 </html>

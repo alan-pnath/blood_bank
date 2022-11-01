@@ -7,6 +7,10 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 
+def donorreg(request):
+    return render(request,'donor_register.html')
+
+
 
 def loginaction(request):
     global un, ps

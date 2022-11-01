@@ -11,24 +11,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png'%}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+  <link href="{% static 'bloodhome/assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'bloodhome/assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+  <link href="{% static 'bloodhome/assets/css/style.css'%}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Medicio - v4.9.0
@@ -54,7 +54,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="{% static 'assets/img/logo.png'%}" alt=""></a>
+      <a href="{% url 'medicio'%}" class="logo me-auto"><img src="{% static 'bloodhome/assets/img/logo.png'%}" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
@@ -73,7 +73,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">WANT TO DONATE BLOOD</span> </a>
+      <a href="{% url 'donate'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">WANT TO DONATE BLOOD</span> </a>
         <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">LOOKING FOR BLOOD</span> </a>
 
     </div>
@@ -88,7 +88,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/o1.jpg'%})">
+        <div class="carousel-item active" style="background-image: url({% static 'bloodhome/assets/img/slide/o1.jpg'%})">
           <div class="container">
             <h2>Donate Blood <span>Save Life</span></h2>
             <p>Give the gift of life to others and save life.
@@ -100,7 +100,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/y1.jpg'%})">
+        <div class="carousel-item" style="background-image: url({% static 'bloodhome/assets/img/slide/y1.jpg'%})">
           <div class="container">
             <h2><b>Let's create blood relation!</b></h2>
             <p>Donate blood Let <b>HUMANITY</b>  thrive.Blood donation is essential to ensuring community health.</p>
@@ -109,7 +109,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/n1.jpg'%})">
+        <div class="carousel-item" style="background-image: url({% static 'bloodhome/assets/img/slide/n1.jpg'%})">
 
 
       </div>
@@ -211,7 +211,7 @@
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right">
-            <img src="{% static 'assets/img/a1.jpg'%}" class="img-fluid" alt="">
+            <img src="{% static 'bloodhome/assets/img/a1.jpg'%}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
             <p>Blood bank is a place where blood bag that is collected from blood donation events is stored in one place. The term "blood bank" refers to a division of a hospital laboratory where the storage of blood product occurs and where proper testing is performed to reduce the risk of transfusion related events. The process of managing the blood bag that is received from the blood donation events needs a proper and systematic management. The biood bag must be handied with care and treated thoroughly as it is related to someone's life. The development of Web-based Blood Bank And Donation Management System (BBDMS) is proposed to provide a management functional to the blood bank in order to handle the blood bag and to make entries of the individuals who want to donate blood and who are in need.</p>
@@ -292,7 +292,7 @@
 
 
           </div>
-          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("{% static 'assets/img/features1.jpg'%}");' data-aos="zoom-in"></div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("{% static 'bloodhome/assets/img/features1.jpg'%}");' data-aos="zoom-in"></div>
         </div>
 
       </div>
@@ -318,7 +318,7 @@
                   Great place to look for blood in emergency
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg'%}" class="testimonial-img" alt="">
+                <img src="{% static 'bloodhome/assets/img/testimonials/testimonials-1.jpg'%}" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4> &amp; Sales man</h4>
               </div>
@@ -331,7 +331,7 @@
                   I had an amazing experience with B org
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg'%}" class="testimonial-img" alt="">
+                <img src="{% static 'bloodhome/assets/img/testimonials/testimonials-2.jpg'%}" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
               </div>
@@ -344,7 +344,7 @@
                   One of the best sites for Blood donation.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg'%}" class="testimonial-img" alt="">
+                <img src="{% static 'bloodhome/assets/img/testimonials/testimonials-3.jpg'%}" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
               </div>
@@ -357,7 +357,7 @@
                   I couldn't receive the blood on time. So i had to contact another hospital.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg'%}" class="testimonial-img" alt="">
+                <img src="{% static 'bloodhome/assets/img/testimonials/testimonials-4.jpg'%}" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
@@ -370,7 +370,7 @@
                   Great Servies, we can find blood easily.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg'%}" class="testimonial-img" alt="">
+                <img src="{% static 'bloodhome/assets/img/testimonials/testimonials-5.jpg'%}" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
@@ -395,14 +395,14 @@
 
         <div class="gallery-slider swiper">
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-1.jpg'%}"><img src="{% static 'assets/img/gallery/a1.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/a3.jpeg'%}"><img src="{% static 'assets/img/gallery/gallery-2.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-3.jpg'%}"><img src="{% static 'assets/img/gallery/a4.jpeg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/a5.jpg'%}"><img src="{% static 'assets/img/gallery/gallery-4.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-5.jpg'%}"><img src="{% static 'assets/img/gallery/j2.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/k1.jpg'%}"><img src="{% static 'assets/img/gallery/gallery-6.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/n1.jpg'%}"><img src="{% static 'assets/img/gallery/gallery-7.jpg'%}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/m1.jpg'%}"><img src="{% static 'assets/img/gallery/gallery-8.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/gallery-1.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/a1.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/a3.jpeg'%}"><img src="{% static 'bloodhome/assets/img/gallery/gallery-2.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/gallery-3.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/a4.jpeg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/a5.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/gallery-4.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/gallery-5.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/j2.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/k1.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/gallery-6.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/n1.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/gallery-7.jpg'%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'bloodhome/assets/img/gallery/m1.jpg'%}"><img src="{% static 'bloodhome/assets/img/gallery/gallery-8.jpg'%}" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -650,15 +650,15 @@ The minimum interval between whole blood donations is 12 weeks for men and 16 we
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js'%}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/purecounter/purecounter_vanilla.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/vendor/php-email-form/validate.js'%}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js'%}"></script>
+  <script src="{% static 'bloodhome/assets/js/main.js'%}"></script>
 
 </body>
 
