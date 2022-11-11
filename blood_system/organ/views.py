@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def organhome(request):
-    return render(request,'.html')
+    return render(request,'organ_home.html')
 
 def organsignup(request):
     return render(request,'organ_signup.html')

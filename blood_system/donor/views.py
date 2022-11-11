@@ -82,6 +82,7 @@ def loginaction(request):
         if t==():
             return render(request,'error.html')
         else:
+
             return render(request, 'blood_login.html')
     return render(request, 'login_page.html')
 

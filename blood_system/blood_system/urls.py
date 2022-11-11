@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf import settings
 from donor import views
 from organ.views import *
+from hospital.views import *
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -29,6 +30,8 @@ urlpatterns = [
     path('donorreg/', views.donorreg,name="donate"),
     path('organsignup/',organsignup,name="organ_signup"),
     path('organlogin/',organlogin,name="organ_login"),
+    path('organhome/',organhome,name="organ_home"),
+    path('hospitalhome/', hospitalhome, name="hosp_home"),
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
