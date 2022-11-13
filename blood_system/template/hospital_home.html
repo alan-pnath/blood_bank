@@ -11,23 +11,23 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'hosphome/assets/img/favicon.png'%}" rel="icon">
-  <link href="{% static 'hosphome/assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+  <link href="{% static 'hospitalhome/assets/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'hospitalhome/assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'hosphome/assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/aos/aos.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
-  <link href="{% static 'hosphome/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{% static 'hosphome/assets/css/style.css'%}" rel="stylesheet">
+  <link href="{% static 'hospitalhome/assets/css/style.css'%}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Moderna - v4.10.1
@@ -44,41 +44,20 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1 class="text-light"><a href="{% url 'medicio' %}"><span>MEDICIO</span></a></h1>
+        <h1 class="text-light"><a href="{% url 'medicio'%}"><span>MEDICIO</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <!--<nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active " href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-        -->
+          <li><a class="active " href="{% url 'medicio'%}">Home</a></li>
+
+          <li><a href="{% url 'hosp_login'%}">Login</a></li>
+          <li><a href="{% url 'hosp_reg' %}">Sign Up</a></li>
+
+
+
 
     </div>
   </header><!-- End Header -->
@@ -111,40 +90,7 @@
   <main id="main">
 
     <!-- ======= Services Section ======= -->
-    <section class="services">
-      <div class="container" >
-
-        <div class="row css">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box icon-box-pink">
-              <div class="icon"><img src="{% static 'hosphome/assets/img/result.png'%}" width="48px" height="40x"></i></div>
-              <h4 class="title"><a href="">UPLOAD RESULT</a></h4>
-              <p class="description">Update Results of Blood Donors</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box icon-box-cyan">
-              <div class="icon"><img src="{% static 'hosphome/assets/img/blood.png'%}" width="25px" height="35x"></i></div>
-              <h4 class="title"><a href="">BLOOD AVAILABILITY</a></h4>
-              <p class="description">Check and Update Blood Avialiability.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-green">
-              <div class="icon"><img src="{% static 'hosphome/assets/img/organ.png'%}" width="48px" height="40x"></i></div>
-              <h4 class="title"><a href="">ORGAN DONORS</a></h4>
-              <p class="description">See details of Organ Donors</p>
-            </div>
-          </div>
-
-
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
+    <!-- End Services Section -->
 
 
   </main><!-- End #main -->
@@ -156,8 +102,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4></h4>
+            <p></p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -186,11 +132,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">UPLOAD RESULT</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">BLOOD AVAILABILITY</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">ORGAN DONORS</a></li>
             </ul>
           </div>
 
@@ -207,8 +151,8 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Moderna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>About Medicio</h3>
+            <p>Save Life</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -238,17 +182,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{% static 'hosphome/assets/vendor/purecounter/purecounter_vanilla.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/aos/aos.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/waypoints/noframework.waypoints.js'%}"></script>
-  <script src="{% static 'hosphome/assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/purecounter/purecounter_vanilla.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/aos/aos.js'%}"></script>
+  <script src="{%  static 'hospitalhome/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/waypoints/noframework.waypoints.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/vendor/php-email-form/validate.js'%}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'hosphome/assets/js/main.js'%}"></script>
+  <script src="{% static 'hospitalhome/assets/js/main.js'%}"></script>
 
 </body>
 

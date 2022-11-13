@@ -32,6 +32,9 @@ urlpatterns = [
     path('organlogin/',organlogin,name="organ_login"),
     path('organhome/',organhome,name="organ_home"),
     path('hospitalhome/', hospitalhome, name="hosp_home"),
+    path('hospitallogin/', hospitallogin, name="hosp_login"),
+    path('hospitalsignup/', hospitalsignup, name="hosp_reg"),
+
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

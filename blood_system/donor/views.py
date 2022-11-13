@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from .models import Blood_Users
+# from django.contrib.auth.models import User,auth
 import mysql.connector as sql
+from django.http import HttpResponse
+
+
 un=''
 ps=''
 # Create your views here.
@@ -66,25 +71,20 @@ def donorreg(request):
 
 
 def loginaction(request):
-    global un, ps
-    if request.method == "POST":
-        m = sql.connect(host="localhost", user="root", passwd="", database="medicio")
-        cursor = m.cursor()
-        d = request.POST
-        for key, value in d.items():
-            if key == "email":
-                un = value
-            if key == "pass":
-                ps = value
-        c = "select * from blood_user where E_mail='{}' and Password='{}'".format(un, ps)
-        cursor.execute(c)
-        t=tuple(cursor.fetchall())
-        if t==():
-            return render(request,'error.html')
-        else:
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('pass')
+        user = Blood_Users.objects.filter(E_mail=email, Password=password)
+        if user:
+            user_details = Blood_Users.objects.get(E_mail=email, Password=password)
+            user_id = user_details.Full_Name
+            request.session['id'] = user_id
+            return render(request, 'blood_login.html',{'id':user_id})
 
-            return render(request, 'blood_login.html')
+        else:
+            return HttpResponse('wrong user name or password or account does not exist!!')
     return render(request, 'login_page.html')
+
 
 def bloodhome(request):
     return render(request,'blood_home.html')
@@ -92,22 +92,25 @@ def bloodhome(request):
 
 def signaction(request):
 
-    global un,ps,fn,pn
+
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="",database="medicio")
-        cursor=m.cursor()
-        d=request.POST
-        for key,value in d.items():
-            if key == "fullname":
-                fn = value
-            if key=="email":
-                un=value
-            if key=="number":
-                pn=value
-            if key=="pass":
-                ps=value
-        c="insert into blood_user(Full_Name,E_mail,Ph_number,Password)Values('{}','{}','{}','{}')".format(fn,un,pn,ps)
-        cursor.execute(c)
-        m.commit()
+        Full_Name = request.POST['fullname']
+        E_mail = request.POST['email']
+        PH_number = request.POST['number']
+        Password = request.POST['pass']
+
+        ob=Blood_Users()
+        ob.Full_Name = Full_Name
+        ob.E_mail = E_mail
+        ob.PH_number = PH_number
+        ob.Password = Password
+        if (Blood_Users.objects.filter(E_mail=E_mail)).exists():
+            return HttpResponse('User name already exist!!')
+        ob.status = 0
+        ob.save()
         return render(request, 'login_page.html')
+    else:
+        return render(request, 'signup_page.html')
+
+
     return render(request,'signup_page.html')
