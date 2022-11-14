@@ -28,12 +28,14 @@ urlpatterns = [
     path('loginaction/', views.loginaction,name="login"),
     path('signupaction/', views.signaction,name="signup"),
     path('donorreg/', views.donorreg,name="donate"),
+    path('bloodsearch/',views.bloodsearch,name="search"),
     path('organsignup/',organsignup,name="organ_signup"),
     path('organlogin/',organlogin,name="organ_login"),
     path('organhome/',organhome,name="organ_home"),
     path('hospitalhome/', hospitalhome, name="hosp_home"),
     path('hospitallogin/', hospitallogin, name="hosp_login"),
     path('hospitalsignup/', hospitalsignup, name="hosp_reg"),
+
 
 
 

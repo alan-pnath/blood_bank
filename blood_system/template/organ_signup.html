@@ -22,14 +22,14 @@
 				<p class="text-1">Sign Up</p>
 				<p class="text-2"></p>
 			</div>
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" action="#" method="post" id="myform">{% csrf_token %}
 				<div class="form-row" data-validate="Valid email is required:ex@abc.xyz">
 					<label for="username">USERNAME</label>
 					<input type="text" name="username" id="username" class="input-text" >
 				</div>
 				<div class="form-row">
 					<label for="your_email">E-MAIL</label>
-					<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" required>
+					<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" required>
 				</div>
                 <div class="form-row">
                     <label for="phone">PHONE</label>
@@ -38,11 +38,11 @@
 					</div>
 				<div class="form-row">
 					<label for="password">PASSWORD</label>
-					<input type="password" name="password" id="password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8}" class="input-text" required>
+					<input type="password" name="password" id="password"  class="input-text" required>
 				</div>
 				<div class="form-row">
 					<label for="comfirm_password">CONFIRM PASSWORD</label>
-					<input type="password" name="comfirm_password" id="comfirm_password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8}" class="input-text" required>
+					<input type="password" name="comfirm_password" id="comfirm_password"  class="input-text" required>
 				</div>
 				<div class="form-row-last">
 					<input type="submit" name="register" class="register" value="Register">

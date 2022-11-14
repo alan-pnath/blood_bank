@@ -1,0 +1,170 @@
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet" />
+    <link href="{% static 'bloodsearch/css/main.css'%}" rel="stylesheet" />
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="{% static 'bloodsearch/fonts/icomoon/style.css'%}">
+
+     <link rel="stylesheet" href="{% static 'bloodsearch/css-table-14/css/owl.carousel.min.css'%}">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{% static 'bloodsearch/css-table-14/css/bootstrap.min.css'%}">
+
+     <!-- Style -->
+     <link rel="stylesheet" href="{% static 'bloodsearch/css-table-14/css/style.css'%}">
+  </head>
+  <body>
+    <div class="s013">
+      <form>
+        <fieldset>
+          <legend>Search</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="left">
+            <div class="input-wrap first">
+              <div class="input-field first">
+                <label>State</label>
+
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="">Kasaragod</option>
+                    <option>Kannur</option>
+                    <option>Wayanad</option>
+                      <option>Kozhikode</option>
+                      <option>Malappuram</option>
+                      <option>Palakkad</option>
+                      <option>Thrissur</option>
+                           <option>Ernakulam</option>
+                           <option>Idukki</option>
+                           <option>Kottayam</option>
+                           <option>Alappuzha</option>
+                           <option>Pathanamthitta</option>
+                           <option>Kollam</option>
+                           <option>Thiruvananthapuram</option>
+                  </select>
+              </div>
+            </div>
+            <div class="input-wrap second">
+              <div class="input-field second">
+                <label>Blood Type</label>
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="">A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                      <option>O+</option>
+                      <option>O-</option>
+                      <option>AB+</option>
+                      <option>AB-</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-search" type="button">SEARCH</button>
+        </div>
+      </form>
+    </div>
+    <div class="content tb-new">
+    <br>
+        <div class="container">
+          <div class="table-responsive custom-table-responsive">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                       <th scope="col">Availability  </th>
+                     <th scope="col"> Hospital Name</th>
+                     <th scope="col">Address</th>
+                      <th scope="col">Contact No.</th>
+
+                    <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr scope="row">
+                  <th scope="row">
+
+                  </th>
+
+                  <td><a href="#">General Hospital </a></td>
+                  <td>
+                    Kasargod
+                    <small class="d-block"></small>
+                  </td>
+                  <td>+91 9947104024</td>
+
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+                <tr scope="row">
+                  <th scope="row">
+
+                  </th>
+
+                  <td><a href="#">Ahalia Foundation </a></td>
+                  <td>
+                    Opp.District Hospital,Thoyammal
+                    <small class="d-block">Kasaragod</small>
+                  </td>
+                  <td>+91 99837104524</td>
+
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+                <tr scope="row">
+                  <th scope="row">
+
+                  </th>
+
+                  <td><a href="#">Yenepoya Medical College Hospital </a></td>
+                  <td>
+                    Nithyanand Nagar University Road,Deralakatte
+                    <small class="d-block">Kasaragod</small>
+                  </td>
+                  <td>+91 9947789632</td>
+
+                </tr>
+                <tr class="spacer"><td colspan="100"></td></tr>
+                <tr scope="row">
+                  <th scope="row">
+
+                  </th>
+
+                  <td><a href="#">Kamath Medical Center </a></td>
+                  <td>
+                    Kasargod
+                    <small class="d-block"></small>
+                  </td>
+                  <td>+91 9978541224</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+
+      </div>
+    <script src="{% static 'bloodsearch/js/extention/choices.js'%}"></script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+    </script>
+    <script src="{% static 'bloodsearch/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'bloodsearch/js/popper.min.js'%}"></script>
+    <script src="{% static 'bloodsearch/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'bloodsearch/js/main.js'%}"></script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Blood_Users
+from .models import Blood_Donor_register
 # from django.contrib.auth.models import User,auth
 import mysql.connector as sql
 from django.http import HttpResponse
@@ -11,61 +12,62 @@ ps=''
 def medicio(request):
     return render(request, 'home_page.html')
 
+def bloodsearch(request):
+    return render(request,'bloodsearch.html')
+
 
 def donorreg(request):
-    global  fn,ln, ag, ty, db, gen, ad1, ad2, pin, st, wg, diab, hv, med, Mname, ds, Dname, surg, Sname, donprev, dondate
-    if request.method == "POST":
-        m = sql.connect(host="localhost", user="root", passwd="", database="medicio")
-        cursor = m.cursor()
-        d = request.POST
-        for key, value in d.items():
-            if key == "first":
-                fn = value
-            if key == "last":
-                ln = value
-            if key == "age":
-                ag = value
-            if key == "type":
-                ty = value
-            if key == "dob":
-                db = value
-            if key == "gender":
-                gen = value
-            if key == "add1":
-                ad1 = value
-            if key == "add2":
-                ad2 = value
-            if key == "pin":
-                pin = value
-            if key == "state":
-                st = value
-            if key == "weight":
-                wg = value
-            if key == "diab":
-                diab = value
-            if key == "hiv":
-                hv = value
-            if key == "medicine":
-                med = value
-            if key == "medname":
-                Mname = value
-            if key == "disease":
-                ds = value
-            if key == "Dname":
-                Dname= value
-            if key == "surg":
-                surg = value
-            if key == "surgname":
-                Sname = value
-            if key == "donateprev":
-                donprev = value
-            if key == "dondate":
-                dondate = value
+    if request.method=="POST":
+        First_Name = request.POST['first']
+        last_Name = request.POST['last']
+        age = request.POST['age']
+        bloodtype = request.POST['type']
+        dob = request.POST['dob']
+        gender = request.POST['gender']
+        add1 = request.POST['add1']
+        add2 = request.POST['add2']
+        pin = request.POST['pin']
+        state = request.POST['state']
+        weight = request.POST['weight']
+        diabetic = request.POST['diab']
+        hiv = request.POST['hiv']
+        medicine = request.POST['medicine']
+        medicinename = request.POST['medname']
+        disease = request.POST['disease']
+        diseasename = request.POST['Dname']
+        surgery = request.POST['surg']
+        surgeryname = request.POST['surgname']
+        donated = request.POST['donateprev']
+        donateddate = request.POST['dondate']
 
-        c = "insert into blood_donor_reg(First_Name,Last_Name,Age,Blood_Type,DOB,Gender,Address1,Address2,Pincode,State,Weight,Diabetic,HIV,Medicine,Medicine_Name,Disease,Disease_Name,Surgery,Surgery_Name,Donated_Prev,Donated_Date)Values('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}',{})".format(fn,ln, ag, ty, db, gen, ad1, ad2, pin, st, wg, diab, hv, med, Mname, ds, Dname, surg, Sname, donprev, dondate)
-        cursor.execute(c)
-        m.commit()
-        return render(request, 'blood_home.html')
+
+        ob=Blood_Donor_register()
+        ob.First_Name=First_Name
+        ob.Last_Name=last_Name
+        ob.Age=age
+        ob.Blood_Type=bloodtype
+        ob.Date_Of_Birth=dob
+        ob.Gender=gender
+        ob.Address1=add1
+        ob.Address2=add2
+        ob.PinCode=pin
+        ob.State=state
+        ob.Weight=weight
+        ob.Diabetic=diabetic
+        ob.HIV=hiv
+        ob.Medicine=medicine
+        ob.Medicine_Name=medicinename
+        ob.Disease=disease
+        ob.Disease_Name=diseasename
+        ob.Surgery=surgery
+        ob.Surgery_Name=surgeryname
+        ob.Donated_Previous=donated
+        ob.Donated_Date=donateddate
+        ob.status=0
+        ob.save()
+        return render(request, 'blood_login.html')
+
+
     return render(request,'donor_register.html')
 
 
