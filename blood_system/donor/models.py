@@ -26,6 +26,7 @@ class Blood_Donor_register(models.Model):
     Address1 = models.CharField(max_length=1024)
     Address2 = models.CharField(max_length=1024)
     PinCode = models.CharField(max_length=8)
+    District = models.CharField(max_length=30,null=True)
     State = models.CharField(max_length=15)
     Weight = models.FloatField(max_length=6)
     Diabetic = models.CharField(max_length=5)

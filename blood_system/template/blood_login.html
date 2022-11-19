@@ -75,7 +75,12 @@
 
       <a href="{% url 'donate'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">WANT TO DONATE BLOOD</span> </a>
         <a href="{% url 'search'%}" class="appointment-btn scrollto"><span class="d-none d-md-inline">LOOKING FOR BLOOD</span> </a>
-         <li>HELLO, {{id}}</li>
+       <nav id="navbar" class="navbar order-last order-lg-0">
+       <ul>
+         <li> &nbsp;HELLO, {{id}}</li>
+      <li><a class="nav-link scrollto" href="{% url 'logout' %}">LOGOUT</a></li>
+       </ul>
+          </nav>
     </div>
 
   </header><!-- End Header -->

@@ -27,6 +27,7 @@ def donorreg(request):
         add1 = request.POST['add1']
         add2 = request.POST['add2']
         pin = request.POST['pin']
+        district=request.POST['district']
         state = request.POST['state']
         weight = request.POST['weight']
         diabetic = request.POST['diab']
@@ -51,6 +52,7 @@ def donorreg(request):
         ob.Address1=add1
         ob.Address2=add2
         ob.PinCode=pin
+        ob.District=district
         ob.State=state
         ob.Weight=weight
         ob.Diabetic=diabetic
@@ -116,3 +118,7 @@ def signaction(request):
 
 
     return render(request,'signup_page.html')
+
+def logout(request):
+    request.session.flush()
+    return render(request, 'home_page.html')

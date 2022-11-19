@@ -26,6 +26,7 @@ urlpatterns = [
     path('bloodhome/', views.bloodhome,name="blood_home"),
     path('admin/', admin.site.urls),
     path('loginaction/', views.loginaction,name="login"),
+    path('logout/', views.logout,name="logout"),
     path('signupaction/', views.signaction,name="signup"),
     path('donorreg/', views.donorreg,name="donate"),
     path('bloodsearch/',views.bloodsearch,name="search"),
