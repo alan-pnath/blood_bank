@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -22,7 +22,7 @@
 				<p class="text-1">Sign Up</p>
 				<p class="text-2"></p>
 			</div>
-			<form class="form-detail" action="#" method="post" id="myform">{% csrf_token %}
+			<form class="form-detail" action="" method="post" >{% csrf_token %}
 				<div class="form-row" data-validate="Valid email is required:ex@abc.xyz">
 					<label for="username">USERNAME</label>
 					<input type="text" name="username" id="username" class="input-text" >
@@ -45,12 +45,13 @@
 					<input type="password" name="comfirm_password" id="comfirm_password"  class="input-text" required>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Register">
+					<input type="submit" name="register" class="register" >
 					<p>Or<a href="{% url 'organ_login' %}">Login in</a></p>
 				</div>
 			</form>
 		</div>
 	</div>
+
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
@@ -75,10 +76,10 @@
 		  	},
 		  	messages: {
 		  		username: {
-		  			required: "Please enter an username"
+		  			required: "Please enter Your username"
 		  		},
 		  		your_email: {
-		  			required: "Please provide an email"
+		  			required: "Please provide Your email"
 		  		},
 		  		password: {
 	  				required: "Please provide a password"
@@ -90,5 +91,5 @@
 		  	}
 		});
 	</script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

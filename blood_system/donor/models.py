@@ -16,7 +16,7 @@ class Blood_Users(models.Model):
 
 class Blood_Donor_register(models.Model):
 
-    Blood_User = models.ForeignKey(Blood_Users,on_delete=models.CASCADE,default='',blank=True,null=True)
+    Blood_User = models.ForeignKey(Blood_Users,on_delete=models.CASCADE,default='',blank=False,null=True)
     First_Name = models.CharField(max_length=30)
     Last_Name = models.CharField(max_length=30)
     Age = models.PositiveIntegerField(null=False, blank=False)

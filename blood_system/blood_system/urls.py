@@ -13,12 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from xml.etree.ElementInclude import include
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf import settings
 from donor import views
-from organ.views import *
-from hospital.views import *
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -30,13 +29,8 @@ urlpatterns = [
     path('signupaction/', views.signaction,name="signup"),
     path('donorreg/', views.donorreg,name="donate"),
     path('bloodsearch/',views.bloodsearch,name="search"),
-    path('organsignup/',organsignup,name="organ_signup"),
-    path('organlogin/',organlogin,name="organ_login"),
-    path('organhome/',organhome,name="organ_home"),
-    path('hospitalhome/', hospitalhome, name="hosp_home"),
-    path('hospitallogin/', hospitallogin, name="hosp_login"),
-    path('hospitalsignup/', hospitalsignup, name="hosp_reg"),
-
+    path('',include('organ.urls')),
+    path('',include('hospital.urls')),
 
 
 

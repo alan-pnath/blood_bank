@@ -13,6 +13,7 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 def bloodsearch(request):
+
     return render(request,'bloodsearch.html')
 
 

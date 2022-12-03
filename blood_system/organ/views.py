@@ -8,6 +8,7 @@ def organhome(request):
 
 def organsignup(request):
 
+
     if request.method == "POST":
         username = request.POST['username']
         E_mail = request.POST['email']
@@ -35,7 +36,7 @@ def organlogin(request):
             user_details = Organ_Users.objects.get(E_mail=email, Password=password)
             user_id = user_details.Full_Name
             request.session['id'] = user_id
-            return render(request, '.html',{'id':user_id})
+            return render(request,'home_page.html',{'id':user_id})
 
         else:
             return HttpResponse('wrong user name or password or account does not exist!!')
