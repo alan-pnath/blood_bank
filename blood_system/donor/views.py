@@ -114,11 +114,8 @@ def signaction(request):
         ob.status = 0
         ob.save()
         return render(request, 'login_page.html')
-    else:
-        return render(request, 'signup_page.html')
+    return render(request, 'signup_page.html')
 
-
-    return render(request,'signup_page.html')
 
 def logout(request):
     request.session.flush()

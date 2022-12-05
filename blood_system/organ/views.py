@@ -16,7 +16,7 @@ def organsignup(request):
         Password = request.POST['password']
 
         ob=Organ_Users()
-        ob.Full_Name = username
+        ob.Username = username
         ob.E_mail = E_mail
         ob.PH_number = PH_number
         ob.Password = Password
@@ -28,16 +28,16 @@ def organsignup(request):
     return render(request,'organ_signup.html')
 
 def organlogin(request):
+
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('pass')
         user = Organ_Users.objects.filter(E_mail=email, Password=password)
         if user:
             user_details = Organ_Users.objects.get(E_mail=email, Password=password)
-            user_id = user_details.Full_Name
+            user_id = user_details.Username
             request.session['id'] = user_id
-            return render(request,'home_page.html',{'id':user_id})
-
+            return render(request, 'organ_form.html')
         else:
             return HttpResponse('wrong user name or password or account does not exist!!')
     return render(request,'organ_login.html')

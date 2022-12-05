@@ -19,35 +19,35 @@
 
         <div class="container">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
+                <form method="POST" id="signup-form" class="signup-form">{% csrf_token %}
                     <h2>Sign up </h2>
                     <p class="desc"> <span></span></p>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="hospname" id="name" placeholder="Hospital Name"/>
+                        <input type="text" class="form-input" name="hospname"  placeholder="Hospital Name"/>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-input" name="address" id="name" placeholder="Address"/>
+                        <input type="text" class="form-input" name="address"  placeholder="Address"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="district" id="name" placeholder="District"/>
+                        <input type="text" class="form-input" name="district"  placeholder="District"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="pin" id="pin" placeholder="Pincode"/>
+                        <input type="text" class="form-input" name="pin"  placeholder="Pincode"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="phone" id="phone" placeholder="Phone"/>
+                        <input type="text" class="form-input" name="phone" id=" placeholder="Phone"/>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
+                        <input type="email" class="form-input" name="email"  placeholder="Email"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                        <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="password" id="password" placeholder="Confirm Password"/>
+                        <input type="password" class="form-input" name="password" id="password" placeholder="Confirm Password"/>
                         <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">

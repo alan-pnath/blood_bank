@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Organ_Users
 
-# Register your models here.
+admin.site.register(Organ_Users)
