@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 03</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'donortable/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4">Details of Blood Donors</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>First Name</th>
+					        <th>Age</th>
+					        <th>Blood Type</th>
+					        <th>Date of Birth</th>
+					        <th>District</th>
+					        <th>Weight</th>
+					        <th>Diabetic</th>
+					        <th>HIV</th>
+					        <th>Medicine Name</th>
+					        <th>Surgery Name</th>
+					        <th>Surgery Name</th>
+					        <th>Donated Previous Date</th>
+					        <th>Accept</th>
+					        <th>Decline</th>
+
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <th scope="row" class="scope" >.com</th>
+					        <td>1 Year</td>
+					        <td>$70.00</td>
+					        <td>$5.00</td>
+					        <td>$5.00</td>
+ 						  <td>1 Year</td>
+					        <td>$70.00</td>
+					        <td>$5.00</td>
+					        <td>$5.00</td>
+					        <td>$5.00</td>
+					        <td>$5.00</td>
+					        <td>$5.00</td>
+					        <td class="border-bottom-0"><a href="#" class="btn btn-primary">decline</a></td>
+						  <td class="border-bottom-0"><a href="#" class="btn btn-primary">accept</a></td>
+					      </tr>
+
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'donortable/js/jquery.min.js' %}"></script>
+  <script src="{% static 'donortable/js/popper.js' %}"></script>
+  <script src="{% static 'donortable/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'donortable/js/main.js' %}"></script>
+
+	</body>
+</html>
+

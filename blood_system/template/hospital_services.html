@@ -90,15 +90,15 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
               <div class="icon"><img src="{% static 'hospitalhome/assets/img/result.png'%}" width="48px" height="40x"></i></div>
-              <h4 class="title"><a href="">UPLOAD RESULT</a></h4>
-              <p class="description">Update Results of Blood Donors</p>
+              <h4 class="title"><a href="{% url 'blood_details'%}">BLOOD DONORS</a></h4>
+              <p class="description">See details of Blood Donors</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box icon-box-cyan">
               <div class="icon"><img src="{% static 'hospitalhome/assets/img/blood.png'%}" width="25px" height="35x"></i></div>
-              <h4 class="title"><a href="">BLOOD AVAILABILITY</a></h4>
+              <h4 class="title"><a href="{% url 'blood_inv'%}">BLOOD AVAILABILITY</a></h4>
               <p class="description">Check and Update Blood Avialiability.</p>
             </div>
           </div>

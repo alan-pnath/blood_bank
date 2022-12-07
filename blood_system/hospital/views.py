@@ -1,8 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Hospital_Users
-
-
 # Create your views here.
 def hospitalhome(request):
     return render(request, 'hospital_home.html')
@@ -54,3 +52,13 @@ def hospitalsignup(request):
 def logout(request):
     request.session.flush()
     return render(request, 'home_page.html')
+
+def blooddetails(request):
+
+    return render(request, 'donor_table.html')
+
+def bloodinventory(request):
+    return render(request, 'blood_inventory.html')
+
+def hospitalservice(request):
+    return render(request, 'hospital_services.html')
