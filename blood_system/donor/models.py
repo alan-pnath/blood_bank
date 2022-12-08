@@ -1,9 +1,10 @@
 from django.db import models
 from phone_field import PhoneField
-from datetime import datetime
+
 
 
 # Create your models here.
+
 class Blood_Users(models.Model):
     Full_Name = models.CharField(max_length=30)
     E_mail = models.EmailField(max_length=50)
@@ -16,7 +17,6 @@ class Blood_Users(models.Model):
 
 class Blood_Donor_register(models.Model):
 
-    Blood_User = models.ForeignKey(Blood_Users,on_delete=models.CASCADE,default='',blank=False,null=True)
     First_Name = models.CharField(max_length=30)
     Last_Name = models.CharField(max_length=30)
     Age = models.PositiveIntegerField(null=False, blank=False)
@@ -26,17 +26,17 @@ class Blood_Donor_register(models.Model):
     Address1 = models.CharField(max_length=1024)
     Address2 = models.CharField(max_length=1024)
     PinCode = models.CharField(max_length=8)
-    District = models.CharField(max_length=30,null=True)
+    District = models.CharField(max_length=30, null=True)
     State = models.CharField(max_length=15)
     Weight = models.FloatField(max_length=6)
     Diabetic = models.CharField(max_length=5)
     HIV = models.CharField(max_length=5)
     Medicine = models.CharField(max_length=5)
-    Medicine_Name = models.CharField(max_length=30,null=True)
+    Medicine_Name = models.CharField(max_length=30, null=True)
     Disease = models.CharField(max_length=5)
-    Disease_Name = models.CharField(max_length=30,null=True)
+    Disease_Name = models.CharField(max_length=30, null=True)
     Surgery = models.CharField(max_length=5)
-    Surgery_Name = models.CharField(max_length=30,null=True)
+    Surgery_Name = models.CharField(max_length=30, null=True)
     Donated_Previous = models.CharField(max_length=5)
     Donated_Date = models.DateField(null=True)
 

@@ -1,13 +1,10 @@
 from django.shortcuts import render
 from .models import Blood_Users
 from .models import Blood_Donor_register
-# from django.contrib.auth.models import User,auth
-import mysql.connector as sql
 from django.http import HttpResponse
 
 
-un=''
-ps=''
+
 # Create your views here.
 def medicio(request):
     return render(request, 'home_page.html')
@@ -120,3 +117,4 @@ def signaction(request):
 def logout(request):
     request.session.flush()
     return render(request, 'home_page.html')
+

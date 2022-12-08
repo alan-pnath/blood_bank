@@ -14,3 +14,11 @@ class Hospital_Users(models.Model):
 
     def __str__(self):
         return self.Hospital_Name
+
+class Blood_Stock(models.Model):
+    Hospital_Name = models.CharField(max_length=30)
+    Blood_Type=models.CharField(max_length=5)
+
+
+    def __str__(self):
+        return self.Hospital_Name

@@ -14,6 +14,7 @@
 
 	</head>
 	<body>
+	<form method="POST" action="{% url 'blood_details'%}?">{% csrf_token %}
 	<section class="ftco-section">
 
 			<div class="row">
@@ -27,6 +28,7 @@
 					        <th>Age</th>
 					        <th>Blood Type</th>
 					        <th>Date of Birth</th>
+					        <th>Gender</th>
 					        <th>District</th>
 					        <th>Weight</th>
 					        <th>Diabetic</th>
@@ -35,29 +37,32 @@
 					        <th>Surgery Name</th>
 					        <th>Surgery Name</th>
 					        <th>Donated Previous Date</th>
-					        <th>Accept</th>
-					        <th>Decline</th>
+					        <th>Select</th>
+
+
 
 					      </tr>
 					    </thead>
 					    <tbody>
+						{% for x in register %}
 					      <tr>
-					        <th scope="row" class="scope" >.com</th>
-					        <td>1 Year</td>
-					        <td>$70.00</td>
-					        <td>$5.00</td>
-					        <td>$5.00</td>
- 						  <td>1 Year</td>
-					        <td>$70.00</td>
-					        <td>$5.00</td>
-					        <td>$5.00</td>
-					        <td>$5.00</td>
-					        <td>$5.00</td>
-					        <td>$5.00</td>
-					        <td class="border-bottom-0"><a href="#" class="btn btn-primary">decline</a></td>
-						  <td class="border-bottom-0"><a href="#" class="btn btn-primary">accept</a></td>
-					      </tr>
+					        <th scope="row" class="scope" >{{x.First_Name}}</th>
+					        <td>{{x.Age}}</td>
+					        <td>{{x.Blood_Type}}</td>
+					        <td>{{x.Date_Of_Birth}}</td>
+					        <td>{{x.Gender}}</td>
+					        <td>{{x.District}}</td>
+ 						  	<td>{{x.Weight}}</td>
+					        <td>{{x.Diabetic}}</td>
+					        <td>{{x.HIV}}</td>
+					        <td>{{x.Medicine_Name}}</td>
+					        <td>{{x.Disease_Name}}</td>
+					        <td>{{x.Surgery_Name}}</td>
+					        <td>{{x.Donated_Date}}</td>
+							  <td><button  type="submit" name="action" value="accept">Accept</button><br><button  type="submit" name="action" value="reject">Reject</button></td>
 
+					      </tr>
+{%endfor%}
 					    </tbody>
 					  </table>
 					</div>
@@ -65,7 +70,7 @@
 			</div>
 		</div>
 	</section>
-
+	</form>
 	<script src="{% static 'donortable/js/jquery.min.js' %}"></script>
   <script src="{% static 'donortable/js/popper.js' %}"></script>
   <script src="{% static 'donortable/js/bootstrap.min.js' %}"></script>
