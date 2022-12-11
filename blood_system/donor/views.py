@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Blood_Users
 from .models import Blood_Donor_register
 from django.http import HttpResponse
-
+from hospital.models import Blood_Stock
 
 
 # Create your views here.
@@ -10,6 +10,15 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 def bloodsearch(request):
+    if request.method == "POST":
+        district = request.POST.get('district')
+        btype = request.POST.get('btype')
+        value = Blood_Stock.objects.filter(District=district, Blood_Type=btype)
+        if value:
+            show=Blood_Stock.objects(District=district, Blood_Type=btype)
+            data=show.objects.all()
+            return render(request, 'bloodsearch.html', {'register': data})
+
 
     return render(request,'bloodsearch.html')
 

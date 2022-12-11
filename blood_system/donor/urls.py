@@ -18,13 +18,17 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from . views import *
 
 urlpatterns = [
+    path('',medicio,name="medicio"),
+    path('bloodhome/', bloodhome,name="blood_home"),
     path('admin/', admin.site.urls),
-    path('',include('organ.urls')),
-    path('',include('hospital.urls')),
-    path('',include('hospital.urls')),
-    path('',include('donor.urls')),
+    path('loginaction/', loginaction,name="login"),
+    path('logout/', logout,name="logout"),
+    path('signupaction/', signaction,name="signup"),
+    path('donorreg/', donorreg,name="donate"),
+    path('bloodsearch/',bloodsearch,name="search"),
 
 
 

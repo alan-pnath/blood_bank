@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="s013">
-      <form>
+      <form method="POST" action="{% url 'search'%}?">{% csrf_token %}
         <fieldset>
           <legend>Search</legend>
         </fieldset>
@@ -34,21 +34,21 @@
               <div class="input-field first">
                 <label>State</label>
 
-                  <select data-trigger="" name="choices-single-defaul">
-                    <option placeholder="">Kasaragod</option>
-                    <option>Kannur</option>
-                    <option>Wayanad</option>
-                      <option>Kozhikode</option>
-                      <option>Malappuram</option>
-                      <option>Palakkad</option>
-                      <option>Thrissur</option>
-                           <option>Ernakulam</option>
-                           <option>Idukki</option>
-                           <option>Kottayam</option>
-                           <option>Alappuzha</option>
-                           <option>Pathanamthitta</option>
-                           <option>Kollam</option>
-                           <option>Thiruvananthapuram</option>
+                  <select data-trigger="" name="district">
+                    <option placeholder="" value="{{Kasaragod}}">Kasaragod</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Wayanad">Wayanad</option>
+                      <option value="Kozhikode">Kozhikode</option>
+                      <option value="Malappuram">Malappuram</option>
+                      <option value="Palakkad">Palakkad</option>
+                      <option value="Thrissur">Thrissur</option>
+                           <option value="Ernakulam">Ernakulam</option>
+                           <option value="Idukki">Idukki</option>
+                           <option value="Kottayam">Kottayam</option>
+                           <option value="{{Alappuzha}}">Alappuzha</option>
+                           <option value="Pathanamthitta">Pathanamthitta</option>
+                           <option value="Kollam">Kollam</option>
+                           <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                   </select>
               </div>
             </div>
@@ -56,21 +56,21 @@
               <div class="input-field second">
                 <label>Blood Type</label>
                 <div class="input-select">
-                  <select data-trigger="" name="choices-single-defaul">
-                    <option placeholder="">A+</option>
-                    <option>A-</option>
-                    <option>B+</option>
-                    <option>B-</option>
-                      <option>O+</option>
-                      <option>O-</option>
-                      <option>AB+</option>
-                      <option>AB-</option>
+                  <select data-trigger=""  name="btype">
+                    <option placeholder="" value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
                   </select>
                 </div>
               </div>
             </div>
           </div>
-          <button class="btn-search" type="button">SEARCH</button>
+          <button class="btn-search" type="submit" >SEARCH</button>
         </div>
       </form>
     </div>
@@ -81,70 +81,30 @@
             <table class="table custom-table">
               <thead>
                 <tr>
-                       <th scope="col">Availability  </th>
+
                      <th scope="col"> Hospital Name</th>
-                     <th scope="col">Address</th>
-                      <th scope="col">Contact No.</th>
+                     <th scope="col">District</th>
+                      <th scope="col">Blood Type</th>
 
                     <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
+              <tr scope="row">
+
+
+              {% for x in register %}
+
                 <tr scope="row">
-                  <th scope="row">
 
-                  </th>
-
-                  <td><a href="#">General Hospital </a></td>
-                  <td>
-                    Kasargod
-                    <small class="d-block"></small>
-                  </td>
-                  <td>+91 9947104024</td>
+                  <td>{{x.Hospital_Name}}</td>
+                  <td>{{x.District}} </td>
+                  <td>{{x.Blood_Type}}</td>
 
                 </tr>
-                <tr class="spacer"><td colspan="100"></td></tr>
-                <tr scope="row">
-                  <th scope="row">
+              </tr>
+              {% endfor %}
 
-                  </th>
-
-                  <td><a href="#">Ahalia Foundation </a></td>
-                  <td>
-                    Opp.District Hospital,Thoyammal
-                    <small class="d-block">Kasaragod</small>
-                  </td>
-                  <td>+91 99837104524</td>
-
-                </tr>
-                <tr class="spacer"><td colspan="100"></td></tr>
-                <tr scope="row">
-                  <th scope="row">
-
-                  </th>
-
-                  <td><a href="#">Yenepoya Medical College Hospital </a></td>
-                  <td>
-                    Nithyanand Nagar University Road,Deralakatte
-                    <small class="d-block">Kasaragod</small>
-                  </td>
-                  <td>+91 9947789632</td>
-
-                </tr>
-                <tr class="spacer"><td colspan="100"></td></tr>
-                <tr scope="row">
-                  <th scope="row">
-
-                  </th>
-
-                  <td><a href="#">Kamath Medical Center </a></td>
-                  <td>
-                    Kasargod
-                    <small class="d-block"></small>
-                  </td>
-                  <td>+91 9978541224</td>
-
-                </tr>
 
               </tbody>
             </table>
