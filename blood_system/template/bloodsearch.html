@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="s013">
-      <form method="POST" action="{% url 'search'%}?">{% csrf_token %}
+      <form method="GET" action="" >{% csrf_token %}
         <fieldset>
           <legend>Search</legend>
         </fieldset>
@@ -35,7 +35,7 @@
                 <label>State</label>
 
                   <select data-trigger="" name="district">
-                    <option placeholder="" value="{{Kasaragod}}">Kasaragod</option>
+                    <option placeholder="" value="Kasaragod">Kasaragod</option>
                     <option value="Kannur">Kannur</option>
                     <option value="Wayanad">Wayanad</option>
                       <option value="Kozhikode">Kozhikode</option>
@@ -45,7 +45,7 @@
                            <option value="Ernakulam">Ernakulam</option>
                            <option value="Idukki">Idukki</option>
                            <option value="Kottayam">Kottayam</option>
-                           <option value="{{Alappuzha}}">Alappuzha</option>
+                           <option value="Alappuzha">Alappuzha</option>
                            <option value="Pathanamthitta">Pathanamthitta</option>
                            <option value="Kollam">Kollam</option>
                            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-          <button class="btn-search" type="submit" >SEARCH</button>
+          <button class="btn-search" type="Search" value="Search" >SEARCH</button>
         </div>
       </form>
     </div>
@@ -89,24 +89,18 @@
                     <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody>
-              <tr scope="row">
+               <tbody>
 
-
-              {% for x in register %}
-
+               {% for x in register %}
                 <tr scope="row">
 
-                  <td>{{x.Hospital_Name}}</td>
+                  <td> {{x.Hospital_Name}} </td>
                   <td>{{x.District}} </td>
                   <td>{{x.Blood_Type}}</td>
 
                 </tr>
-              </tr>
-              {% endfor %}
-
-
-              </tbody>
+               {% endfor %}
+               </tbody>
             </table>
           </div>
 

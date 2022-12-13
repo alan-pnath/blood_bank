@@ -62,6 +62,7 @@ def bloodinventory(request):
     return render(request, 'blood_inventory.html')
 
 def hospitalservice(request):
+
     return render(request, 'hospital_services.html')
 
 def blooddetails(request):
@@ -84,6 +85,7 @@ def blooddetails(request):
     #     # if statusReject:
     #     #     remove = Blood_Donor_register.objects.get(First_Name=First_Name)
     #     #     remove.delete()
-    data=Blood_Donor_register.objects.all()
+
+    data=Blood_Donor_register.objects.filter()
     return render(request, 'donor_table.html',{'register':data})
 

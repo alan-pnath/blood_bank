@@ -106,12 +106,18 @@
                         </div>
 
                         <div class="input-group">
-                                    <label class="label">Address line 1</label>
+                                    <label class="label">Address</label>
                                     <input class="input--style-4" type="address1" name="add1">
                                 </div>
                              <div class="input-group">
-                                    <label class="label">Address line 2</label>
-                                    <input class="input--style-4" type="address2" name="add2">
+                                    <label class="label">Hospital</label>
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                        <select name="hospital">
+                            {% for x in register %}
+	<option placeholder="" value="{{x.Hospital_Name}}">{{x.Hospital_Name}}</option>
+                            {% endfor %}
+</select>
+                                <div class="select-dropdown"></div>
                                 </div>
                                  <div class="input-group">
                                     <label class="label">Pincode</label>
@@ -144,7 +150,7 @@
                             <div class="rs-select2 js-select-simple select--no-search">
                         <select name="state">
 
-	<option value="Kerala">Kerala</option>
+	<option  selected value="Kerala">Kerala</option>
 
 </select>
                                 <div class="select-dropdown"></div>

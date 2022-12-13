@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blood_Users
 from .models import Blood_Donor_register
 from django.http import HttpResponse
 from hospital.models import Blood_Stock
+from hospital.models import Hospital_Users
+
 
 
 # Create your views here.
@@ -10,14 +12,13 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 def bloodsearch(request):
-    if request.method == "POST":
-        district = request.POST.get('district')
-        btype = request.POST.get('btype')
+    if request.method == "GET":
+        district = request.GET.get('district')
+        btype = request.GET.get('btype')
         value = Blood_Stock.objects.filter(District=district, Blood_Type=btype)
-        if value:
-            show=Blood_Stock.objects(District=district, Blood_Type=btype)
-            data=show.objects.all()
-            return render(request, 'bloodsearch.html', {'register': data})
+        return render(request, 'bloodsearch.html',{'register': value})
+
+
 
 
     return render(request,'bloodsearch.html')
@@ -25,6 +26,7 @@ def bloodsearch(request):
 
 def donorreg(request):
     if request.method=="POST":
+
         First_Name = request.POST['first']
         last_Name = request.POST['last']
         age = request.POST['age']
@@ -32,7 +34,7 @@ def donorreg(request):
         dob = request.POST['dob']
         gender = request.POST['gender']
         add1 = request.POST['add1']
-        add2 = request.POST['add2']
+        add2 = request.POST['hospital']
         pin = request.POST['pin']
         district=request.POST['district']
         state = request.POST['state']
@@ -56,8 +58,8 @@ def donorreg(request):
         ob.Blood_Type=bloodtype
         ob.Date_Of_Birth=dob
         ob.Gender=gender
-        ob.Address1=add1
-        ob.Address2=add2
+        ob.Address=add1
+        ob.Hospital=add2
         ob.PinCode=pin
         ob.District=district
         ob.State=state
@@ -76,8 +78,8 @@ def donorreg(request):
         ob.save()
         return render(request, 'blood_login.html')
 
-
-    return render(request,'donor_register.html')
+    value = Hospital_Users.objects.all()
+    return render(request,'donor_register.html',{'register': value})
 
 
 
