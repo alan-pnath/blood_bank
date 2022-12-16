@@ -4,6 +4,7 @@ from .models import Blood_Donor_register
 from django.http import HttpResponse
 from hospital.models import Blood_Stock
 from hospital.models import Hospital_Users
+from django.db.models import Q
 
 
 
@@ -12,11 +13,17 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 def bloodsearch(request):
+    results = []
+
     if request.method == "GET":
-        district = request.GET.get('district')
-        btype = request.GET.get('btype')
-        value = Blood_Stock.objects.filter(District=district, Blood_Type=btype)
-        return render(request, 'bloodsearch.html',{'register': value})
+
+        query = request.GET.get('district') and request.GET.get('btype')
+        if query == '':
+            query = 'None'
+            results = Blood_Stock.objects.filter(Q(Hospital_Name__icontains=query) | Q(District__icontains=query) | Q(Blood_Type__icontains=query))
+
+
+        return render(request, 'bloodsearch.html',{'query': query, 'results': results})
 
 
 

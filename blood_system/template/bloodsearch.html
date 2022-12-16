@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="s013">
-      <form method="GET" action="" >{% csrf_token %}
+      <form method="get" action="{% url 'search' %} " >{% csrf_token %}
         <fieldset>
           <legend>Search</legend>
         </fieldset>
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-          <button class="btn-search" type="Search" value="Search" >SEARCH</button>
+          <button class="btn-search" type="submit" value="Search" >SEARCH</button>
         </div>
       </form>
     </div>
@@ -90,8 +90,8 @@
                 </tr>
               </thead>
                <tbody>
-
-               {% for x in register %}
+                {% if query %}
+               {% for x in results %}
                 <tr scope="row">
 
                   <td> {{x.Hospital_Name}} </td>
@@ -100,6 +100,7 @@
 
                 </tr>
                {% endfor %}
+               {% endif %}
                </tbody>
             </table>
           </div>

@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Hospital_Users
+from .models import *
 from donor.models import Blood_Donor_register
 
 
@@ -59,7 +59,17 @@ def logout(request):
 
 
 def bloodinventory(request):
-    return render(request, 'blood_inventory.html')
+
+    num1 = Blood_Stock.objects.filter(Blood_Type='A+').count()
+    num2 = Blood_Stock.objects.filter(Blood_Type='A-').count()
+    num3 = Blood_Stock.objects.filter(Blood_Type='B+').count()
+    num4 = Blood_Stock.objects.filter(Blood_Type='B-').count()
+    num5 = Blood_Stock.objects.filter(Blood_Type='AB+').count()
+    num6 = Blood_Stock.objects.filter(Blood_Type='AB-').count()
+    num7 = Blood_Stock.objects.filter(Blood_Type='O+').count()
+    num8 = Blood_Stock.objects.filter(Blood_Type='O-').count()
+
+    return render(request, 'blood_inventory.html',{'Ap':num1,'An':num2,'Bp':num3,'Bn':num4,'ABp':num5,'ABn':num6,'Op':num7,'On':num8})
 
 def hospitalservice(request):
 

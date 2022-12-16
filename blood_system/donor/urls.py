@@ -23,7 +23,6 @@ from . views import *
 urlpatterns = [
     path('',medicio,name="medicio"),
     path('bloodhome/', bloodhome,name="blood_home"),
-    path('admin/', admin.site.urls),
     path('loginaction/', loginaction,name="login"),
     path('logout/', logout,name="logout"),
     path('signupaction/', signaction,name="signup"),

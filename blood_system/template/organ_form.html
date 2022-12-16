@@ -28,12 +28,16 @@
 </head>
 
 <body>
+<div align="RIGHT">
+    <a href="{% url 'logout' %}">LOGOUT</a>
+
+</div>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Pledge To Be An Organ Donor</h2>
-                    <form method="POST">
+                    <form method="POST">{% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -44,7 +48,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Middle Name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="mid_name">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -58,13 +62,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Father's Name</label>
-                                    <input class="input--style-4" type="text" name="father's_name">
+                                    <input class="input--style-4" type="text" name="fathers_name">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Mother's Name</label>
-                                    <input class="input--style-4" type="text" name="mother's_name">
+                                    <input class="input--style-4" type="text" name="mothers_name">
                                 </div>
                             </div>
 
@@ -76,12 +80,7 @@
                                     <input class="input--style-4" type="text" name="current_address">
                                 </div>
                             </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Address Line2</label>
-                                    <input class="input--style-4" type="text" name="address_line2">
-                                </div>
-                            </div>
+
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">City</label>
@@ -125,15 +124,15 @@
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" name="gender" value="Male">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Female
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="gender" value="Female">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Other
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="gender" value="Other">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -168,14 +167,14 @@
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="blood_group">
                                     <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
 
                                 </select>
                                 <div class="select-dropdown"></div>
@@ -189,10 +188,10 @@
                             <div class="input-group">
                             <label class="label">Choose Identity Card</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="blood_group">
+                                <select name="idcard">
                                     <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Aadhar</option>
-                                    <option>Pan</option>
+                                    <option value="Aadhar">Aadhar</option>
+                                    <option value="Pan">Pan</option>
 
 
 
@@ -208,12 +207,6 @@
                                 </div>
                                            </div>
 
-                            <div class="col-3">
-                                <div class="input-group">
-                                    <label class="label">Enter Identity card Number</label>
-                                    <input class="input--style-4" type="text" name="identity_card_no">
-                                </div>
-                                           </div>
 
                         </div>
                         <div class="row row-space">
@@ -241,39 +234,40 @@
 
                         </div>
                             <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Organs You wish to donate</label>
 
-                                </div>
+                            <div class="input-group">
+                            <label class="label">Organs You wish to donate</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="organ">
+                                    <option disabled="disabled" selected="selected">Organs You wish to donate </option>
+                                    <option value="Kidney">Kidney</option>
+                                    <option value="Liver">Liver</option>
+
+
+
+                                </select>
+                                <div class="select-dropdown"></div>
                             </div>
-                            <div class="checkbox">
-							<label>
-								<input type="checkbox"> Liver
-								<span class="checkmark"></span>
-							</label>
-						</div>
-                        <div class="checkbox">
-							<label>
-								<input type="checkbox"> Kidney
-								<span class="checkmark"></span>
-							</label>
-						</div>
+                        </div>
+                        </div>
+
                         </div>
                         <div class="form-end">
                             <div class="row row-space">
                          <div class="col-4">
-						<div class="checkbox">
+                            <div class="checkbox">
 							<label >
-								<input type="checkbox"> I do hereby declare that the above information is true to the best of my knowledge and belief.
-								<span class="checkmark"></span>
+                                <input type="checkbox">I do hereby declare that the above information is true to the best of my knowledge and belief.
+
 							</label>
-						</div>
+                                </div>
+
 
                                 </div></div>
 					</div>
 
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" onclick="displayRadioValue()" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -290,6 +284,17 @@
 
     <!-- Main JS-->
     <script src="{% static 'organform/js/global.js'%}"></script>
+<script>
+        function displayRadioValue() {
+            var ele = document.getElementsByName('gender');
+
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                document.getElementById("result").innerHTML
+                        = ele[i].value;
+            }
+        }
+    </script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
