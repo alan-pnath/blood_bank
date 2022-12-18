@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
 from donor.models import Blood_Donor_register
+from organ.models import Organ_Donor_Form
 
 
 # Create your views here.
@@ -98,4 +99,10 @@ def blooddetails(request):
 
     data=Blood_Donor_register.objects.filter()
     return render(request, 'donor_table.html',{'register':data})
+
+
+def organtable(request):
+    data = Organ_Donor_Form.objects.filter()
+
+    return render(request,'organ_table.html',{'register':data})
 

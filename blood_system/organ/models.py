@@ -12,7 +12,7 @@ class Organ_Users(models.Model):
 
 class Organ_Donor_Form(models.Model):
 
-    User_Id = models.ForeignKey(Organ_Users, on_delete=models.CASCADE)
+    User_Id = models.ForeignKey(Organ_Users, on_delete=models.CASCADE,null=False)
     First_Name = models.CharField(max_length=30)
     Middle_Name = models.CharField(max_length=30)
     Last_Name = models.CharField(max_length=30)
@@ -29,7 +29,7 @@ class Organ_Donor_Form(models.Model):
     PH_number = models.CharField(max_length=15)
     Occupation = models.CharField(max_length=20)
     Blood_Group = models.CharField(max_length=5)
-    Id_Card = models.FileField(upload_to='documents/')
+    Id_Card = models.FileField(upload_to='media/')
     Emergency_Contact_Name = models.CharField(max_length=30)
     Emergency_Contact_Phone = models.CharField(max_length=15)
     Emergency_Contact_Address = models.CharField(max_length=30)
