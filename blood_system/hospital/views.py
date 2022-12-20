@@ -96,12 +96,14 @@ def blooddetails(request):
     #     # if statusReject:
     #     #     remove = Blood_Donor_register.objects.get(First_Name=First_Name)
     #     #     remove.delete()
-
-    data=Blood_Donor_register.objects.filter()
+    userid = request.session['id']
+    data=Blood_Donor_register.objects.filter(Hospital=userid)
     return render(request, 'donor_table.html',{'register':data})
 
 
 def organtable(request):
+
+
     data = Organ_Donor_Form.objects.filter()
 
     return render(request,'organ_table.html',{'register':data})

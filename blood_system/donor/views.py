@@ -13,22 +13,15 @@ def medicio(request):
     return render(request, 'home_page.html')
 
 def bloodsearch(request):
-    results = []
 
-    if request.method == "GET":
+    district = request.GET.get('district')
+    btype = request.GET.get('btype')
 
-        query = request.GET.get('district') and request.GET.get('btype')
-        if query == '':
-            query = 'None'
-            results = Blood_Stock.objects.filter(Q(Hospital_Name__icontains=query) | Q(District__icontains=query) | Q(Blood_Type__icontains=query))
+    donors = Blood_Stock.objects.filter(Blood_Type=btype,District=district)
 
+    # Render the search results template with the list of donors
+    return render(request, 'bloodsearch.html', {'donors': donors})
 
-        return render(request, 'bloodsearch.html',{'query': query, 'results': results})
-
-
-
-
-    return render(request,'bloodsearch.html')
 
 
 def donorreg(request):
@@ -38,7 +31,7 @@ def donorreg(request):
         last_Name = request.POST['last']
         age = request.POST['age']
         bloodtype = request.POST['type']
-        dob = request.POST['dob']
+        dofb = request.POST['birthday']
         gender = request.POST['gender']
         add1 = request.POST['add1']
         add2 = request.POST['hospital']
@@ -55,7 +48,7 @@ def donorreg(request):
         surgery = request.POST['surg']
         surgeryname = request.POST['surgname']
         donated = request.POST['donateprev']
-        donateddate = request.POST['dondate']
+        donateddate = request.POST['donateddate']
 
 
         ob=Blood_Donor_register()
@@ -63,7 +56,7 @@ def donorreg(request):
         ob.Last_Name=last_Name
         ob.Age=age
         ob.Blood_Type=bloodtype
-        ob.Date_Of_Birth=dob
+        ob.Date_Of_Birth=dofb
         ob.Gender=gender
         ob.Address=add1
         ob.Hospital=add2
@@ -81,6 +74,9 @@ def donorreg(request):
         ob.Surgery_Name=surgeryname
         ob.Donated_Previous=donated
         ob.Donated_Date=donateddate
+        if (Blood_Donor_register.objects.filter(First_Name=First_Name)).exists():
+            return HttpResponse('You have already registered the form')
+
         ob.status=0
         ob.save()
         return render(request, 'blood_login.html')
@@ -128,7 +124,7 @@ def signaction(request):
             return HttpResponse('User name already exist!!')
         ob.status = 0
         ob.save()
-        return render(request, 'login_page.html')
+        return render(request, 'signup_page.html')
     return render(request, 'signup_page.html')
 
 

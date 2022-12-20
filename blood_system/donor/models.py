@@ -21,7 +21,7 @@ class Blood_Donor_register(models.Model):
     Last_Name = models.CharField(max_length=30)
     Age = models.PositiveIntegerField(null=False, blank=False)
     Blood_Type = models.CharField(max_length=3)
-    Date_Of_Birth = models.DateField()
+    Date_Of_Birth = models.CharField(max_length=10)
     Gender = models.CharField(max_length=10)
     Address = models.CharField(max_length=1024)
     PinCode = models.CharField(max_length=8)
@@ -38,7 +38,7 @@ class Blood_Donor_register(models.Model):
     Surgery = models.CharField(max_length=5)
     Surgery_Name = models.CharField(max_length=30, null=True)
     Donated_Previous = models.CharField(max_length=5)
-    Donated_Date = models.DateField(null=True)
+    Donated_Date = models.CharField(max_length=10,null=True)
 
     def __str__(self):
         return self.First_Name

@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="s013">
-      <form method="get" action="{% url 'search' %} " >{% csrf_token %}
+      <form method="get" >{% csrf_token %}
         <fieldset>
           <legend>Search</legend>
         </fieldset>
@@ -35,7 +35,8 @@
                 <label>State</label>
 
                   <select data-trigger="" name="district">
-                    <option placeholder="" value="Kasaragod">Kasaragod</option>
+                    <option placeholder="" >Select</option>
+                    <option  value="Kasaragod">Kasaragod</option>
                     <option value="Kannur">Kannur</option>
                     <option value="Wayanad">Wayanad</option>
                       <option value="Kozhikode">Kozhikode</option>
@@ -57,7 +58,8 @@
                 <label>Blood Type</label>
                 <div class="input-select">
                   <select data-trigger=""  name="btype">
-                    <option placeholder="" value="A+">A+</option>
+                    <option placeholder="" value="">Select</option>
+                    <option  value="A+">A+</option>
                     <option value="A-">A-</option>
                     <option value="B+">B+</option>
                     <option value="B-">B-</option>
@@ -70,7 +72,7 @@
               </div>
             </div>
           </div>
-          <button class="btn-search" type="submit" value="Search" >SEARCH</button>
+          <button class="btn-search" value="Search" type="submit">SEARCH</button>
         </div>
       </form>
     </div>
@@ -80,28 +82,26 @@
           <div class="table-responsive custom-table-responsive">
             <table class="table custom-table">
               <thead>
+
                 <tr>
 
-                     <th scope="col"> Hospital Name</th>
+                     <th scope="col"> Hospital  Name</th>
                      <th scope="col">District</th>
                       <th scope="col">Blood Type</th>
-
-                    <th scope="col"></th>
                 </tr>
+
               </thead>
-               <tbody>
-                {% if query %}
-               {% for x in results %}
-                <tr scope="row">
+              <tbody>
+						{% for x in donors %}
+					      <tr>
 
-                  <td> {{x.Hospital_Name}} </td>
-                  <td>{{x.District}} </td>
-                  <td>{{x.Blood_Type}}</td>
+					        <td>{{x.Hospital_Name}}</td>
+					        <td>{{x.District}}</td>
+					        <td>{{x.Blood_Type}}</td>
 
-                </tr>
-               {% endfor %}
-               {% endif %}
-               </tbody>
+					      </tr>
+						{%endfor%}
+					    </tbody>
             </table>
           </div>
 
@@ -109,6 +109,10 @@
         </div>
 
       </div>
+
+
+
+      </div><div class="content tb-new">
     <script src="{% static 'bloodsearch/js/extention/choices.js'%}"></script>
     <script>
       const choices = new Choices('[data-trigger]',
@@ -123,3 +127,141 @@
     <script src="{% static 'bloodsearch/js/main.js'%}"></script>
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  <title>Search for Blood</title>-->
+<!--  <style>-->
+<!--    * {-->
+<!--      box-sizing: border-box;-->
+<!--      margin: 0;-->
+<!--      padding: 0;-->
+<!--    }-->
+
+<!--    body {-->
+<!--      font-family: 'Arial', sans-serif;-->
+<!--      background-color: #f1f1f1;-->
+<!--      color: #333;-->
+<!--    }-->
+
+<!--    .container {-->
+<!--      max-width: 800px;-->
+<!--      margin: 0 auto;-->
+<!--      padding: 20px;-->
+<!--    }-->
+
+<!--    h1 {-->
+<!--      text-align: center;-->
+<!--      margin-bottom: 30px;-->
+<!--    }-->
+
+<!--    form {-->
+<!--      display: flex;-->
+<!--      flex-wrap: wrap;-->
+<!--      justify-content: space-between;-->
+<!--      margin-bottom: 30px;-->
+<!--    }-->
+
+<!--    form label {-->
+<!--      display: block;-->
+<!--      width: 48%;-->
+<!--      margin-bottom: 10px;-->
+<!--      font-weight: 600;-->
+<!--    }-->
+
+<!--    form input[type="text"] {-->
+<!--      width: 100%;-->
+<!--      padding: 12px 20px;-->
+<!--      margin: 8px 0;-->
+<!--      box-sizing: border-box;-->
+<!--      border: 1px solid #ccc;-->
+<!--      border-radius: 4px;-->
+<!--    }-->
+
+<!--    form button[type="submit"] {-->
+<!--      width: 100%;-->
+<!--      background-color: #4caf50;-->
+<!--      color: white;-->
+<!--      padding: 14px 20px;-->
+<!--      margin: 8px 0;-->
+<!--      border: none;-->
+<!--      border-radius: 4px;-->
+<!--      cursor: pointer;-->
+<!--      font-weight: 600;-->
+<!--    }-->
+
+<!--    form button[type="submit"]:hover {-->
+<!--      background-color: #45a049;-->
+<!--    }-->
+
+<!--    table {-->
+<!--      border-collapse: collapse;-->
+<!--      width: 100%;-->
+<!--    }-->
+
+<!--    th, td {-->
+<!--      text-align: left;-->
+<!--      padding: 8px;-->
+<!--    }-->
+
+<!--    tr:nth-child(even){background-color: #f2f2f2}-->
+
+<!--    th {-->
+<!--      background-color: #4caf50;-->
+<!--      color: white;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <div class="container">-->
+<!--    <h1>Search Page</h1>-->
+
+<!--    <form method="post" action="/bloodsearch/">{% csrf_token %}-->
+<!--      <label for="search1">District:</label>-->
+<!--      <select data-trigger="" id="Search1" name="district">-->
+<!--                    <option placeholder="" value="Kasaragod">Kasaragod</option>-->
+<!--                    <option value="Kannur">Kannur</option>-->
+<!--                    <option value="Wayanad">Wayanad</option>-->
+<!--                      <option value="Kozhikode">Kozhikode</option>-->
+<!--                      <option value="Malappuram">Malappuram</option>-->
+<!--                      <option value="Palakkad">Palakkad</option>-->
+<!--                      <option value="Thrissur">Thrissur</option>-->
+<!--                           <option value="Ernakulam">Ernakulam</option>-->
+<!--                           <option value="Idukki">Idukki</option>-->
+<!--                           <option value="Kottayam">Kottayam</option>-->
+<!--                           <option value="Alappuzha"> Alappuzha</option>-->
+<!--                           <option value="Pathanamthitta">Pathanamthitta</option>-->
+<!--                           <option value="Kollam">Kollam</option>-->
+<!--                           <option value="Thiruvananthapuram">Thiruvananthapuram</option>-->
+<!--                  </select>-->
+<!--      <label for="search2">Blood Type</label>-->
+<!--      <select data-trigger="" id="search2" name="btype">&ndash;&gt;-->
+<!--                    <option placeholder="" value="A+">A+</option>-->
+<!--                    <option value="A-">A-</option>-->
+<!--                    <option value="B+">B+</option>-->
+<!--                    <option value="B-">B-</option>-->
+<!--                      <option value="O+">O+</option>-->
+<!--                      <option value="O-">O-</option>-->
+<!--                      <option value="AB+">AB+</option>-->
+<!--                      <option value="AB-">AB-</option>-->
+<!--                  </select>-->
+<!--      <button type="submit" value="Search">Search</button>-->
+<!--    </form>-->
+
+
+
+<!--    <table>-->
+
+<!--        {% for x in donors %}-->
+<!--      <tr>-->
+<!--        <td> {{x.Hospital_Name}} </td>-->
+<!--          <td>{{x.District}} </td>-->
+<!--          <td>{{x.Blood_Type}}</td>-->
+<!--      </tr>-->
+<!--        {% endfor %}-->
+
+
+<!--    </table>-->
+<!--  </div>-->
+<!--</body>-->
+<!--</html>-->
