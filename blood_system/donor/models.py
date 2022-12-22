@@ -39,6 +39,7 @@ class Blood_Donor_register(models.Model):
     Surgery_Name = models.CharField(max_length=30, null=True)
     Donated_Previous = models.CharField(max_length=5)
     Donated_Date = models.CharField(max_length=10,null=True)
+    status=models.CharField(max_length=10,null=True)
 
     def __str__(self):
         return self.First_Name

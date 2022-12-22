@@ -88,19 +88,23 @@
                      <th scope="col"> Hospital  Name</th>
                      <th scope="col">District</th>
                       <th scope="col">Blood Type</th>
+                      <th scope="col">count</th>
+                      <th scope="col">Contact Number:</th>
                 </tr>
 
               </thead>
               <tbody>
-						{% for x in donors %}
+						{% for x in donor %}
 					      <tr>
 
 					        <td>{{x.Hospital_Name}}</td>
 					        <td>{{x.District}}</td>
 					        <td>{{x.Blood_Type}}</td>
-
+{%endfor%}
+                              <td>{{leng}}</td>
+                              <td>{{data}}</td>
 					      </tr>
-						{%endfor%}
+
 					    </tbody>
             </table>
           </div>

@@ -44,7 +44,7 @@
 					      </tr>
 					    </thead>
 					    <tbody>
-						{% for x in register %}
+						{% for x in result %}
 					      <tr>
 					        <th scope="row" class="scope" >{{x.First_Name}}</th>
 					        <td>{{x.Age}}</td>
@@ -59,7 +59,7 @@
 					        <td>{{x.Disease_Name}}</td>
 					        <td>{{x.Surgery_Name}}</td>
 					        <td>{{x.Donated_Date}}</td>
-							  <td></td>
+							  <td>{{x.status}}</td>
 
 					      </tr>
 {%endfor%}

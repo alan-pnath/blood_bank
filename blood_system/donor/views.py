@@ -18,9 +18,15 @@ def bloodsearch(request):
     btype = request.GET.get('btype')
 
     donors = Blood_Stock.objects.filter(Blood_Type=btype,District=district)
+    h_name=donors[:1]
+    l=len(donors)
 
-    # Render the search results template with the list of donors
-    return render(request, 'bloodsearch.html', {'donors': donors})
+    if donors:
+        ph = "047944221"
+
+        return render(request, 'bloodsearch.html',{'donor':h_name,"leng":l, "data":ph})
+
+    return render(request, 'bloodsearch.html', {'donor': h_name, "leng": l})
 
 
 
@@ -74,10 +80,10 @@ def donorreg(request):
         ob.Surgery_Name=surgeryname
         ob.Donated_Previous=donated
         ob.Donated_Date=donateddate
+        ob.status='pending'
         if (Blood_Donor_register.objects.filter(First_Name=First_Name)).exists():
             return HttpResponse('You have already registered the form')
 
-        ob.status=0
         ob.save()
         return render(request, 'blood_login.html')
 
@@ -107,9 +113,8 @@ def bloodhome(request):
 
 
 def signaction(request):
-
-    error=''
     if request.method=="POST":
+
         Full_Name = request.POST['fullname']
         E_mail = request.POST['email']
         PH_number = request.POST['number']
@@ -125,7 +130,7 @@ def signaction(request):
 
         ob.status = 0
         ob.save()
-        return render(request, 'login_page.html')
+        return redirect('/loginaction')
     return render(request, 'signup_page.html')
 
 
@@ -134,7 +139,9 @@ def logout(request):
     return render(request, 'home_page.html')
 
 def view_result(request):
-    return render(request, 'resulttable.html')
+
+        bdet=Blood_Donor_register.objects.all()
+        return render(request, 'resulttable.html',{'result':bdet})
 
 
 

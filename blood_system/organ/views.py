@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Organ_Users
 from django.http import HttpResponse
 from .models import *
@@ -27,7 +27,7 @@ def organsignup(request):
             return HttpResponse('User name already exist!!')
         ob.status = 0
         ob.save()
-        return render(request, 'organ_signup.html')
+        return redirect('/organlogin')
     return render(request,'organ_signup.html')
 
 def organlogin(request):

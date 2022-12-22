@@ -29,7 +29,7 @@ class Organ_Donor_Form(models.Model):
     PH_number = models.CharField(max_length=15)
     Occupation = models.CharField(max_length=20)
     Blood_Group = models.CharField(max_length=5)
-    Id_Card = models.FileField(upload_to='media/')
+    Id_Card = models.FileField(upload_to='files/')
     Emergency_Contact_Name = models.CharField(max_length=30)
     Emergency_Contact_Phone = models.CharField(max_length=15)
     Emergency_Contact_Address = models.CharField(max_length=30)

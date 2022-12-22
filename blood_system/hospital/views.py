@@ -1,9 +1,8 @@
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from donor.models import Blood_Donor_register
 from organ.models import Organ_Donor_Form
-
 
 # Create your views here.
 def hospitalhome(request):
@@ -73,15 +72,48 @@ def bloodinventory(request):
     return render(request, 'blood_inventory.html',{'Ap':num1,'An':num2,'Bp':num3,'Bn':num4,'ABp':num5,'ABn':num6,'Op':num7,'On':num8})
 
 def hospitalservice(request):
+    userid = request.session['id']
 
-    return render(request, 'hospital_services.html')
+    return render(request, 'hospital_services.html',{'id':userid})
 
 def blooddetails(request):
-    userid = request.session['id']
-    data=Blood_Donor_register.objects.filter(Hospital=userid)
+    try:
+        userid = request.session['id']
+        data=Blood_Donor_register.objects.filter(Hospital=userid,status='pending')
+        btyp=Blood_Donor_register.objects.get(Hospital=userid,status='pending')
+        bt=btyp.Blood_Type
+        request.session['b_type'] = bt
+    except:
+        return render(request, 'donor_table.html')
+
     return render(request, 'donor_table.html',{'register':data})
 
-# def addstock(request):
+def accept(request):
+
+    userid = request.session['id']
+    breg = Blood_Donor_register.objects.get(Hospital=userid, status='pending')
+
+    h_det=Hospital_Users.objects.get(Hospital_Name=userid)
+    dis=h_det.District
+    b_type = request.session['b_type']
+    bs=Blood_Stock(Hospital_Name=userid,Blood_Type=b_type,District=dis)
+    bs.save()
+    breg.status='accepted'
+    breg.save()
+
+
+    return redirect('/')
+def reject(request):
+
+    userid = request.session['id']
+    breg = Blood_Donor_register.objects.get(Hospital=userid, status='pending')
+    breg.status='accepted'
+    breg.save()
+
+
+    return redirect('/hospitalservice')
+
+
 
 
 
