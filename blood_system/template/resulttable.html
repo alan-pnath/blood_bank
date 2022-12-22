@@ -19,7 +19,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-center mb-4">Details of Blood Donors</h4>
+					<h4 class="text-center mb-4">Blood Donated Results</h4>
 					<div class="table-wrap">
 						<table class="table">
 					    <thead class="thead-primary">
@@ -37,7 +37,7 @@
 					        <th>Surgery Name</th>
 					        <th>Surgery Name</th>
 					        <th>Donated Previous Date</th>
-					        <th>Select</th>
+					        <th>Result</th>
 
 
 
@@ -59,12 +59,7 @@
 					        <td>{{x.Disease_Name}}</td>
 					        <td>{{x.Surgery_Name}}</td>
 					        <td>{{x.Donated_Date}}</td>
-							  <td>
-								  <input type="hidden" value="{{x.id}}" name="acceptid">
-								  <a href="accept">Accept</a>
-								  <br>
-								  <a href="reject">Reject</a>
-							  </td>
+							  <td></td>
 
 					      </tr>
 {%endfor%}

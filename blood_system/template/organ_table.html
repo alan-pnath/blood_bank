@@ -35,7 +35,6 @@
 					        <th>Blood_Group</th>
 					        <th>Id_Card </th>
 					        <th>Organ </th>
-					        <th>See details </th>
 
 
 
@@ -54,9 +53,9 @@
 					        <td>{{x.E_mail}}</td>
 					        <td>{{x.PH_number}}</td>
 					        <td>{{x.Blood_Group}}</td>
-					        <td>{{x.Id_Card}}</td>
+					        <td><a href="x.get_absolute_url">{{x.Id_Card}}</a></td>
 					        <td>{{x.Organ}}</td>
-					        <td><a href="">details</a></td>
+
 
 					      </tr>
 {%endfor%}

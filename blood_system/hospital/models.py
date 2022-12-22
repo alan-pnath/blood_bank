@@ -23,3 +23,11 @@ class Blood_Stock(models.Model):
 
     def __str__(self):
         return self.Hospital_Name
+
+class Blood_Result(models.Model):
+    Users=models.CharField(max_length=30)
+    Blood_Type=models.CharField(max_length=5)
+    Result=models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.Users

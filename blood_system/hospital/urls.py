@@ -12,4 +12,5 @@ urlpatterns = [
     path('bloodinventory/', bloodinventory, name="blood_inv"),
     path('hospitalservice/', hospitalservice, name="hosp_serv"),
     path('organtable/',organtable,name="organtable"),
+    # path('addstock/',addstock,name="add"),
 ]

@@ -108,7 +108,7 @@ def bloodhome(request):
 
 def signaction(request):
 
-
+    error=''
     if request.method=="POST":
         Full_Name = request.POST['fullname']
         E_mail = request.POST['email']
@@ -122,13 +122,20 @@ def signaction(request):
         ob.Password = Password
         if (Blood_Users.objects.filter(E_mail=E_mail)).exists():
             return HttpResponse('User name already exist!!')
+
         ob.status = 0
         ob.save()
-        return render(request, 'signup_page.html')
+        return render(request, 'login_page.html')
     return render(request, 'signup_page.html')
 
 
 def logout(request):
     request.session.flush()
     return render(request, 'home_page.html')
+
+def view_result(request):
+    return render(request, 'resulttable.html')
+
+
+
 

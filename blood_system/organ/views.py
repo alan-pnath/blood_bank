@@ -27,7 +27,7 @@ def organsignup(request):
             return HttpResponse('User name already exist!!')
         ob.status = 0
         ob.save()
-        return render(request, 'organ_login.html')
+        return render(request, 'organ_signup.html')
     return render(request,'organ_signup.html')
 
 def organlogin(request):

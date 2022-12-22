@@ -28,6 +28,7 @@ urlpatterns = [
     path('signupaction/', signaction,name="signup"),
     path('donorreg/', donorreg,name="donate"),
     path('bloodsearch/',bloodsearch,name="search"),
+    path('view_result/',view_result,name="viewresult"),
 
 
 

@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.shortcuts import render
 from .models import *
 from donor.models import Blood_Donor_register
@@ -48,7 +48,7 @@ def hospitalsignup(request):
             return HttpResponse('User name already exist!!')
         ob.status = 0
         ob.save()
-        return render(request, 'hospital_login.html')
+        return render(request, 'hospital_registration.html')
     else:
         return render(request, 'hospital_registration.html')
 
@@ -77,34 +77,18 @@ def hospitalservice(request):
     return render(request, 'hospital_services.html')
 
 def blooddetails(request):
-    # if request.method == "POST":
-    #     statusAccept = request.POST.get("action") == "accept"
-    #     statusReject = request.POST.get("action") == "reject"
-    #     if statusAccept:
-    #         try:
-    #
-    #             bloodtype = request.POST['{{x.Blood_Type}}']
-    #             ob = Blood_Stock()
-    #             ob.Blood_Type= bloodtype
-    #             ob.status = 0
-    #             ob.save()
-    #             return render(request, 'donor_table.html')
-    #
-    #         except Exception as e:
-    #             return HttpResponse("failed{}".format(e))
-    #
-    #     # if statusReject:
-    #     #     remove = Blood_Donor_register.objects.get(First_Name=First_Name)
-    #     #     remove.delete()
     userid = request.session['id']
     data=Blood_Donor_register.objects.filter(Hospital=userid)
     return render(request, 'donor_table.html',{'register':data})
+
+# def addstock(request):
+
+
 
 
 def organtable(request):
 
 
     data = Organ_Donor_Form.objects.filter()
-
     return render(request,'organ_table.html',{'register':data})
 

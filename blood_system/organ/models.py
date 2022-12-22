@@ -23,7 +23,7 @@ class Organ_Donor_Form(models.Model):
     District = models.CharField(max_length=30)
     State = models.CharField(max_length=30)
     PinCode = models.CharField(max_length=8)
-    Date_Of_Birth = models.DateField()
+    Date_Of_Birth = models.CharField(max_length=10)
     Gender = models.CharField(max_length=10)
     E_mail = models.CharField(max_length=50)
     PH_number = models.CharField(max_length=15)
