@@ -20,11 +20,17 @@ def bloodsearch(request):
     donors = Blood_Stock.objects.filter(Blood_Type=btype,District=district)
     h_name=donors[:1]
     l=len(donors)
-
     if donors:
-        ph = "047944221"
+        data=Hospital_Users.objects.filter(District=district)
+        for x in data:
+            m=Hospital_Users.objects.get(Hospital_Name=x)
+            c=m.PH_number
 
-        return render(request, 'bloodsearch.html',{'donor':h_name,"leng":l, "data":ph})
+
+    # if donors:
+    #     ph = "047944221"
+
+        return render(request, 'bloodsearch.html',{'donor':h_name,"leng":l, "data":c})
 
     return render(request, 'bloodsearch.html', {'donor': h_name, "leng": l})
 
