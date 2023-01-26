@@ -1,19 +1,12 @@
 from django.db import models
 
-
-
-
-# Create your models here.
-
 class Blood_Users(models.Model):
     Full_Name = models.CharField(max_length=30)
     E_mail = models.CharField(max_length=50)
     PH_number = models.CharField(max_length=30)
     Password = models.CharField(max_length=30)
-
     def __str__(self):
         return self.Full_Name
-
 
 class Blood_Donor_register(models.Model):
 
@@ -40,6 +33,5 @@ class Blood_Donor_register(models.Model):
     Donated_Previous = models.CharField(max_length=5)
     Donated_Date = models.CharField(max_length=10,null=True)
     status=models.CharField(max_length=10,null=True)
-
     def __str__(self):
         return self.First_Name
